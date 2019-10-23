@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">1025837136513-3foo4tskfdl5rev02soom3p2l9b055ko.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://parking2-52789.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1025837136513</string>
+    <string name="google_api_key" translatable="false">AIzaSyCjup7NIV3L2Vw6FgI3p4fLKGYw8eciQFo</string>
+    <string name="google_app_id" translatable="false">1:1025837136513:android:91519d560ba6f5cd2e6b80</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCjup7NIV3L2Vw6FgI3p4fLKGYw8eciQFo</string>
+    <string name="google_storage_bucket" translatable="false">parking2-52789.appspot.com</string>
+    <string name="project_id" translatable="false">parking2-52789</string>
+</resources>
