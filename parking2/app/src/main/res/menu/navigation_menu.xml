@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_profile"
+        android:icon="@mipmap/baseline_person_black_24"
+        android:title="Profile"/>
+
+    <item android:id="@+id/nav_settings"
+        android:icon="@mipmap/baseline_settings_applications_black_24"
+        android:title="Settings"/>
+
+    <item android:id="@+id/nav_dashboard"
+        android:icon="@mipmap/baseline_dashboard_black_24"
+        android:title="My Dashboard"/>
+
+    <item android:id="@+id/nav_logout"
+        android:icon="@mipmap/baseline_exit_to_app_black_24"
+        android:title="Log Out"/>
+
+</menu>

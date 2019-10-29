@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">parking</string>
+
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="action_settings">Settings</string>
+    <string name="Lot15">Button</string>
+
+    <string-array name="permit_array">
+        <item>None</item>
+        <item>Gold Plus</item>
+        <item>Gold</item>
+        <item>Blue</item>
+        <item>Red</item>
+        <item>Orange</item>
+        <item>Night</item>
+        <item>Motorcycle</item>
+    </string-array>
+
+    <string-array name="day_array">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+
+
+    </string-array>
+
+
+
+</resources>
