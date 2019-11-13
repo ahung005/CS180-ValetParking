@@ -7,6 +7,17 @@
     <string name="action_settings">Settings</string>
     <string name="Lot15">Button</string>
 
+    <string name="input_error_name">Name required</string>
+    <string name="input_error_email">Email required</string>
+    <string name="input_error_password">Password required</string>
+    <string name="input_error_password_length">Password should be at least 6 characters long</string>
+    <string name="registration_success">Registered Successfully</string>
+    <string name="registration_failure">There was a problem registering your account</string>
+    <string name="input_error_email_invalid">Enter a valid email</string>
+    <string name="input_error_password_match">Passwords don\'t match</string>
+    <string name="input_error_login">You didn\'t fill in all the fields</string>
+    <string name="login_success">Logged in as</string>
+
     <string-array name="permit_array">
         <item>None</item>
         <item>Gold Plus</item>
@@ -24,8 +35,6 @@
         <item>Wednesday</item>
         <item>Thursday</item>
         <item>Friday</item>
-
-
     </string-array>
 
 

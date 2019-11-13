@@ -1,42 +1,71 @@
 {
   "project_info": {
-    "project_number": "1025837136513",
-    "firebase_url": "https://parking2-52789.firebaseio.com",
-    "project_id": "parking2-52789",
-    "storage_bucket": "parking2-52789.appspot.com"
+    "project_number": "36884769477",
+    "firebase_url": "https://valetparking-bf49c.firebaseio.com",
+    "project_id": "valetparking-bf49c",
+    "storage_bucket": "valetparking-bf49c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1025837136513:android:91519d560ba6f5cd2e6b80",
+        "mobilesdk_app_id": "1:36884769477:android:89212aebbe45ed4fae9eac",
         "android_client_info": {
           "package_name": "com.example.parking"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1025837136513-tnm67srv04qvmd93rn4q9qsb9s86bggd.apps.googleusercontent.com",
+          "client_id": "36884769477-1o0ru0di011f64lacbhid8su94s2p22b.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.parking",
-            "certificate_hash": "b541270d5a6f18982ae08d7ffda3db8c5caf0ac1"
+            "certificate_hash": "2950ab1aa4d9c48ea4123a103d2da962c07a293b"
           }
         },
         {
-          "client_id": "1025837136513-3foo4tskfdl5rev02soom3p2l9b055ko.apps.googleusercontent.com",
+          "client_id": "36884769477-8md33sqairpug2m81kbm96med7nf768a.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCjup7NIV3L2Vw6FgI3p4fLKGYw8eciQFo"
+          "current_key": "AIzaSyABRtxCy1-YkWZsIRWS0irJg9SXq9MGhMc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1025837136513-3foo4tskfdl5rev02soom3p2l9b055ko.apps.googleusercontent.com",
+              "client_id": "36884769477-8md33sqairpug2m81kbm96med7nf768a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36884769477:android:5fc5a2a6ffe35c1cae9eac",
+        "android_client_info": {
+          "package_name": "com.example.valetparking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36884769477-8md33sqairpug2m81kbm96med7nf768a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABRtxCy1-YkWZsIRWS0irJg9SXq9MGhMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36884769477-8md33sqairpug2m81kbm96med7nf768a.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

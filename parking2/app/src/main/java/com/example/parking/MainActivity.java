@@ -7,44 +7,130 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-public class MainActivity extends AppCompatActivity {
-    FirebaseAuth fAuth;
-    Button register, login;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private EditText editTextEmail, editTextPassword;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        register = findViewById(R.id.button);
-        login = findViewById(R.id.login);
 
+        // Views
+        editTextEmail = findViewById(R.id.email);
+        editTextPassword = findViewById(R.id.password);
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), HomePage.class));
+        //Buttons
+        findViewById(R.id.login).setOnClickListener(this);
+        findViewById(R.id.register).setOnClickListener(this);
+
+        //Firebase authentication
+        mAuth = FirebaseAuth.getInstance();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        //handle the already login user
+        if (mAuth.getCurrentUser() != null) {
+            // Only welcome user the first time app is started
+            if (!((AppCtx)getApplicationContext()).toasted) {
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                WelcomeUser(user.getUid());
+                ((AppCtx)getApplicationContext()).toasted = true;
             }
-        });
+            startActivity(new Intent(getApplicationContext(), HomePage.class));
+        }
+    }
 
+    // Check email, password that are entered in your Email and Pass views
+    // The response will tell you whether the signIn was successful or not
+    // Cases: Success, Failure
+    private void LoginUser(String email, String password) {
+        if (validateForm()) {
+            mAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                startActivity(new Intent(getApplicationContext(), HomePage.class));
+                            } else {
+                                Toast.makeText(MainActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+        }
+    }
 
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    // Simple check on Email and Password views to make sure neither are empty
+    private boolean validateForm() {
+        boolean valid = true;
+
+        String email = editTextEmail.getText().toString();
+        if (TextUtils.isEmpty(email)) {
+            editTextEmail.setError("Required.");
+            valid = false;
+        } else {
+            editTextEmail.setError(null);
+        }
+
+        String password = editTextPassword.getText().toString();
+        if (TextUtils.isEmpty(password)) {
+            editTextPassword.setError("Required.");
+            valid = false;
+        } else {
+            editTextPassword.setError(null);
+        }
+
+        return valid;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.login:
+                LoginUser(editTextEmail.getText().toString(), editTextPassword.getText().toString());
+                break;
+            case R.id.register:
                 startActivity(new Intent(getApplicationContext(), Register.class));
-            }
-        });
+                break;
+        }
+    }
 
+    private void WelcomeUser(String uid) {
+        FirebaseDatabase.getInstance()
+                .getReference("Users")
+                .child(uid)
+                .child("name")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            Toast.makeText(MainActivity.this, "Logged in as " + dataSnapshot.getValue(),
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    }
 
-
-
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Toast.makeText(MainActivity.this, databaseError.toString(),
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
     }
 }
