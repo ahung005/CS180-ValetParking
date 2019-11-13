@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,14 +13,18 @@ import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.util.Calendar;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class changePermit extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    private static final String TAG = "changePermit";
+    boolean toasted = false;
     private TextView mdisplayDate;
     private DatePickerDialog.OnDateSetListener mdateSetListener;
 
@@ -32,7 +37,7 @@ public class changePermit extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_changepermit);
 
-        mdisplayDate = findViewById(R.id.datePicker);
+        mdisplayDate = (TextView) findViewById(R.id.datePicker);
         mdisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

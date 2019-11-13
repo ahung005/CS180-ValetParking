@@ -119,7 +119,6 @@ androidx/versionedparcelable/NonParcelField.class
 androidx/versionedparcelable/ParcelField.class
 androidx/versionedparcelable/VersionedParcelize.class
 androidx/viewpager/widget/ViewPager$DecorView.class
-com/example/parking/AppCtx.class
 com/fasterxml/jackson/annotation/JacksonAnnotation.class
 com/fasterxml/jackson/annotation/JacksonAnnotationsInside.class
 com/fasterxml/jackson/annotation/JacksonInject.class
