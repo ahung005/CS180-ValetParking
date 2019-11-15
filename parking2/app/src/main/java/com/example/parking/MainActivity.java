@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editTextEmail = findViewById(R.id.email);
         editTextPassword = findViewById(R.id.password);
 
-        //Buttons
+        //Add listeners to our buttons
         findViewById(R.id.login).setOnClickListener(this);
         findViewById(R.id.register).setOnClickListener(this);
 
@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //handle the already login user
         if (mAuth.getCurrentUser() != null) {
             // Only welcome user the first time app is started
-            if (!((AppCtx)getApplicationContext()).toasted) {
+            if (!((AppCtx)getApplicationContext()).user_welcomed) {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 WelcomeUser(user.getUid());
-                ((AppCtx)getApplicationContext()).toasted = true;
+                ((AppCtx)getApplicationContext()).user_welcomed = true;
             }
             startActivity(new Intent(getApplicationContext(), HomePage.class));
         }
@@ -100,6 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return valid;
     }
 
+    // We are implementing the view onclicklistener so after ADDING the onclicklistener, just wait here
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -113,14 +114,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void WelcomeUser(String uid) {
-        FirebaseDatabase.getInstance()
-                .getReference("Users")
-                .child(uid)
-                .child("name")
+        FirebaseDatabase.getInstance()                // Get everything
+                .getReference("Users")           // From that get Users
+                .child(uid)                           // From that get specific uid (class)
+                .child("name")                        // From that get that class field "name"
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.exists()) {
+                            // If we have name in the specific Firebase location, get the value (from snapshot)
                             Toast.makeText(MainActivity.this, "Logged in as " + dataSnapshot.getValue(),
                                     Toast.LENGTH_LONG).show();
                         }
@@ -132,5 +134,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 Toast.LENGTH_LONG).show();
                     }
                 });
+
+        // Don't welcome user again
+        ((AppCtx)getApplicationContext()).user_welcomed = true;
     }
 }
