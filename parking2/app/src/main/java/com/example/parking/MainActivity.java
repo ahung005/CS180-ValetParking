@@ -52,9 +52,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (!((AppCtx)getApplicationContext()).user_welcomed) {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 WelcomeUser(user.getUid());
-                ((AppCtx)getApplicationContext()).user_welcomed = true;
             }
             startActivity(new Intent(getApplicationContext(), HomePage.class));
+        }
+    }
+
+    // We are implementing the view onclicklistener so after ADDING the onclicklistener, just wait here
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.login:
+                LoginUser(editTextEmail.getText().toString(), editTextPassword.getText().toString());
+                break;
+            case R.id.register:
+                startActivity(new Intent(getApplicationContext(), Register.class));
+                break;
         }
     }
 
@@ -78,6 +90,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     // Simple check on Email and Password views to make sure neither are empty
+    // The reason that there is also a *.setError(null) is in case there was an error but they fixed it
+    // so we would remove that error text
     private boolean validateForm() {
         boolean valid = true;
 
@@ -100,19 +114,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return valid;
     }
 
-    // We are implementing the view onclicklistener so after ADDING the onclicklistener, just wait here
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.login:
-                LoginUser(editTextEmail.getText().toString(), editTextPassword.getText().toString());
-                break;
-            case R.id.register:
-                startActivity(new Intent(getApplicationContext(), Register.class));
-                break;
-        }
-    }
-
     private void WelcomeUser(String uid) {
         FirebaseDatabase.getInstance()                // Get everything
                 .getReference("Users")           // From that get Users
@@ -122,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.exists()) {
-                            // If we have name in the specific Firebase location, get the value (from snapshot)
+                            // If we have name in the specific database location, get the value (from snapshot)
                             Toast.makeText(MainActivity.this, "Logged in as " + dataSnapshot.getValue(),
                                     Toast.LENGTH_LONG).show();
                         }
@@ -138,4 +139,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Don't welcome user again
         ((AppCtx)getApplicationContext()).user_welcomed = true;
     }
+
+    // Could add login with google, twitter, etc. Then send email so they can recover LATER
 }

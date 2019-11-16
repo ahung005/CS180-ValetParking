@@ -1,5 +1,7 @@
 package com.example.parking;
 
+import android.text.style.TtsSpan;
+
 // We can use Hashmap later if we decide to change only first class (store first class)
 // Remember that we can't account for a morning and night class if morning class is dropped
 // or for holidays
@@ -8,13 +10,16 @@ public class Schedule {
     public String Monday, Tuesday, Wednesday, Thursday, Friday;
 
     public Schedule() {
-        this.Monday = "";
-        this.Tuesday = "";
-        this.Wednesday = "";
-        this.Thursday = "";
-        this.Friday = "";
+        // Default constructor required for calls to DataSnapshot.getValue(Schedule.class)
     }
 
-//if this doesn't work, try predefining outside of constructor
+    public Schedule(String Monday, String Tuesday, String Wednesday, String Thursday, String Friday) {
+        this.Monday = Monday;
+        this.Tuesday = Tuesday;
+        this.Wednesday = Wednesday;
+        this.Thursday = Thursday;
+        this.Friday = Friday;
+    }
+
 
 }
