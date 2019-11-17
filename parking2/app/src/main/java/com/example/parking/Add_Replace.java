@@ -2,6 +2,7 @@ package com.example.parking;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -45,7 +47,22 @@ public class Add_Replace extends AppCompatActivity implements OnItemSelectedList
         buildingSpinner.setAdapter(adapter2);
         buildingSpinner.setOnItemSelectedListener(this);
 
+        final EditText chooseTime = findViewById(R.id.classTime);
 
+        chooseTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TimePickerDialog timePickerDialog = new TimePickerDialog(Add_Replace.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int hourOfDay, int minutes) {
+                        chooseTime.setText(hourOfDay + ":" + minutes);
+                    }
+                }, 0, 0, false);
+                timePickerDialog.show();
+
+
+            }
+        });
 
         final TextView TestResult = (TextView) findViewById(R.id.TestResult);
 
@@ -59,6 +76,14 @@ public class Add_Replace extends AppCompatActivity implements OnItemSelectedList
 
                 ClassName = className.getText().toString();
                 Time = time.getText().toString();
+
+                if(ClassName.matches("")){
+                    className.requestFocus();
+                    className.setError("Required");
+                }else if(Time.matches("")){
+                    time.requestFocus();
+                    time.setError("Required");
+                }
                 //Event for when update button is pressed
                 //needs to update firbase with new selected schedule
                 //TestResult.setText(daySel + ", " + ClassName + ", " + Time + ", " + buildingSel);
