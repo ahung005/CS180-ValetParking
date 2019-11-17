@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateSchedule">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="246dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="20dp"
+        android:fillViewport="true"
+        android:scrollbarSize="10dp"
+        android:scrollbarStyle="outsideInset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Sched">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/monday2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mon: CS180 12:30 Sproul"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tuesday2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tue: CS161 15:00 Sproul"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/wednesday2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wed: CS122 14:30 Olmstead"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/thursday2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thu: CS141 13:00 MSE"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/friday2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fri: NONE"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/Sched"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="104dp"
+        android:text="Schedule"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Add_Replace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add/Replace Class"
+        app:layout_constraintBottom_toTopOf="@+id/Remove"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scroll" />
+
+    <Button
+        android:id="@+id/Remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="164dp"
+        android:text="Remove Class"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

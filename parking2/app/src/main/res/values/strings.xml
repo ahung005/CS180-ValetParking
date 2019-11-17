@@ -37,6 +37,25 @@
         <item>Friday</item>
     </string-array>
 
+    <string-array name="building_array">
+        <item>Bourns</item>
+        <item>Boyce</item>
+        <item>CHASS North</item>
+        <item>CHASS South</item>
+        <item>Chung</item>
+        <item>Hum/SS</item>
+        <item>Life Sciences</item>
+        <item>MSE</item>
+        <item>Olmsted</item>
+        <item>Physics</item>
+        <item>Pierce</item>
+        <item>Sproul</item>
+        <item>Skye</item>
+        <item>Spieth</item>
+        <item>UV Theater</item>
+        <item>UNLH</item>
+        <item>Watkins</item>
+    </string-array>
 
 
 </resources>

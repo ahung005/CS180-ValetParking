@@ -25,6 +25,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.parking.Remove" />
+        <activity android:name="com.example.parking.Add_Replace" />
+        <activity android:name="com.example.parking.UpdateSchedule" />
         <activity android:name="com.example.parking.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

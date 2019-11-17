@@ -33,6 +33,14 @@ public class Profile extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), changePermit.class));
             }
         });
+
+        Button updateScheduleButton = (Button) findViewById(R.id.UpdateSched);
+        updateScheduleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), UpdateSchedule.class));
+            }
+        });
     }
 
 }
