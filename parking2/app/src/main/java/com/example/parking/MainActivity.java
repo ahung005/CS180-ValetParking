@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 WelcomeUser(user.getUid());
             }
             startActivity(new Intent(getApplicationContext(), HomePage.class));
+            finish();   // Destroy activity MainActivity and not exist in Back stack
         }
     }
 
@@ -119,7 +120,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .getReference("Users")           // From that get Users
                 .child(uid)                           // From that get specific uid (class)
                 .child("name")                        // From that get that class field "name"
-
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

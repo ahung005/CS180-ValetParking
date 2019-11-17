@@ -1,6 +1,5 @@
 package com.example.parking;
 
-import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -15,11 +14,6 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 
 public class HomePage extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -74,6 +68,15 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Stop app from closing when back button is pressed since MainActivity is 'finish()'ed
+        // So only close drawer is available
+        if(mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
+            mDrawerLayout.closeDrawers();
+        }
     }
 
     @Override
