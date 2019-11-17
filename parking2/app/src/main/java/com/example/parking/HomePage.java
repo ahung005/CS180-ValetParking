@@ -7,9 +7,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -21,10 +23,22 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
 
+    public static TextView textView_big_springs;
+    public static TextView textView_lot_6;
+    public static TextView textView_lot_24;
+    public static TextView textView_lot_26;
+    public static TextView textView_lot_30;
+    public static TextView textView_lot_32;
+    public static TextView textView_lot_50;
+
+    Handler mHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        this.mHandler = new Handler();
+        m_Runnable.run();
 
         // Drawer
         mDrawerLayout = findViewById(R.id.drawerLayout);
@@ -41,7 +55,25 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
 
         //Firebase authentication
         mAuth = FirebaseAuth.getInstance();
+
+        textView_big_springs = (TextView) findViewById(R.id.textView_springs);
+        textView_lot_6 = (TextView) findViewById(R.id.textView_lot_6);
+        textView_lot_24 = (TextView) findViewById(R.id.textView_lot_24);
+        textView_lot_26 = (TextView) findViewById(R.id.textView_lot_26);
+        textView_lot_30 = (TextView) findViewById(R.id.textView_lot_30);
+        textView_lot_32 = (TextView) findViewById(R.id.textView_lot_32);
+        textView_lot_50 = (TextView) findViewById(R.id.textView_lot_50);
+
     }
+
+    private final Runnable m_Runnable = new Runnable() {
+        public void run() {
+            com.example.test.fetchData process = new com.example.test.fetchData();
+            process.execute();
+            HomePage.this.mHandler.postDelayed(m_Runnable,60000);
+        }
+
+    };
 
     @Override
     protected void onStart() {
