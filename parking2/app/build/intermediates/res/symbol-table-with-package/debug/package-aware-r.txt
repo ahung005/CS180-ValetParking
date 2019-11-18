@@ -1238,13 +1238,13 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
-id fiday
 id fill
 id fill_horizontal
 id fill_vertical
 id filled
 id fixed
 id forever
+id friday
 id friday2
 id ghost_view
 id gone

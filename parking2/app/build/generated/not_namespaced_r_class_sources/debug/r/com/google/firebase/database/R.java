@@ -139,7 +139,7 @@ public final class R {
         public static final int chronometer = 0x7f090060;
         public static final int dark = 0x7f09006c;
         public static final int end = 0x7f090080;
-        public static final int forever = 0x7f09008c;
+        public static final int forever = 0x7f09008b;
         public static final int icon = 0x7f090094;
         public static final int icon_group = 0x7f090095;
         public static final int icon_only = 0x7f090096;

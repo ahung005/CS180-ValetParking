@@ -720,7 +720,7 @@ public final class R {
         public static final int edit_query = 0x7f09007e;
         public static final int expand_activities_button = 0x7f090084;
         public static final int expanded_menu = 0x7f090085;
-        public static final int forever = 0x7f09008c;
+        public static final int forever = 0x7f09008b;
         public static final int group_divider = 0x7f090090;
         public static final int home = 0x7f090092;
         public static final int icon = 0x7f090094;

@@ -120,7 +120,7 @@ public final class R {
         public static final int blocking = 0x7f09004b;
         public static final int chronometer = 0x7f090060;
         public static final int dialog_button = 0x7f090077;
-        public static final int forever = 0x7f09008c;
+        public static final int forever = 0x7f09008b;
         public static final int icon = 0x7f090094;
         public static final int icon_group = 0x7f090095;
         public static final int info = 0x7f090099;
