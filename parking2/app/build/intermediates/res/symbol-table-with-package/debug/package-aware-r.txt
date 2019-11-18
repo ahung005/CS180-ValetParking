@@ -1387,6 +1387,13 @@ id textView3
 id textView4
 id textView5
 id textView6
+id textView_lot_24
+id textView_lot_26
+id textView_lot_30
+id textView_lot_32
+id textView_lot_50
+id textView_lot_6
+id textView_springs
 id text_input_password_toggle
 id textinput_counter
 id textinput_error

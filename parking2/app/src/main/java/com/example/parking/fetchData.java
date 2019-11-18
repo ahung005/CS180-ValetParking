@@ -51,8 +51,9 @@ public class fetchData  extends AsyncTask<Void, Void, Void> {
                 big_springs_line = bufferedReader_big_springs.readLine();
                 data_big_springs = data_big_springs + big_springs_line;
             }
-            data_big_springs = data_big_springs.substring(data_big_springs.indexOf("free_spaces") + 14, data_big_springs.indexOf("free_spaces") + 17);
+            data_big_springs = data_big_springs.substring(data_big_springs.indexOf("free_spaces") + 14, data_big_springs.indexOf("\"",data_big_springs.indexOf("free_spaces") + 14));
             spaces_big_springs = data_big_springs.replaceAll("[^0-9]", "");
+            spaces_big_springs = spaces_big_springs.replaceAll("\"", "");
 
             HttpURLConnection httpURLConnection_lot_6 = (HttpURLConnection) lot_6.openConnection();
             InputStream inputStream_lot_6 = httpURLConnection_lot_6.getInputStream();
@@ -62,7 +63,7 @@ public class fetchData  extends AsyncTask<Void, Void, Void> {
                 lot_6_line = bufferedReader_lot_6.readLine();
                 data_lot_6 = data_lot_6 + lot_6_line;
             }
-            data_lot_6 = data_lot_6.substring(data_lot_6.indexOf("free_spaces") + 14, data_lot_6.indexOf("free_spaces") + 17);
+            data_lot_6 = data_lot_6.substring(data_lot_6.indexOf("free_spaces") + 14, data_lot_6.indexOf("\"",data_lot_6.indexOf("free_spaces") + 14));
             spaces_lot_6 = data_lot_6.replaceAll("[^0-9]", "");
 
 
@@ -74,7 +75,7 @@ public class fetchData  extends AsyncTask<Void, Void, Void> {
                 lot_24_line = bufferedReader_lot_24.readLine();
                 data_lot_24 = data_lot_24 + lot_24_line;
             }
-            data_lot_24 = data_lot_24.substring(data_lot_24.indexOf("free_spaces") + 14, data_lot_24.indexOf("free_spaces") + 17);
+            data_lot_24 = data_lot_24.substring(data_lot_24.indexOf("free_spaces") + 14, data_lot_24.indexOf("\"",data_lot_24.indexOf("free_spaces") + 14));
             spaces_lot_24 = data_lot_24.replaceAll("[^0-9]", "");
 
             HttpURLConnection httpURLConnection_lot_26 = (HttpURLConnection) lot_26.openConnection();
@@ -85,7 +86,7 @@ public class fetchData  extends AsyncTask<Void, Void, Void> {
                 lot_26_line = bufferedReader_lot_26.readLine();
                 data_lot_26 = data_lot_26 + lot_26_line;
             }
-            data_lot_26 = data_lot_26.substring(data_lot_26.indexOf("free_spaces") + 14, data_lot_26.indexOf("free_spaces") + 17);
+            data_lot_26 = data_lot_26.substring(data_lot_26.indexOf("free_spaces") + 14, data_lot_26.indexOf("\"",data_lot_26.indexOf("free_spaces") + 14));
             spaces_lot_26 = data_lot_26.replaceAll("[^0-9]", "");
 
             HttpURLConnection httpURLConnection_lot_30 = (HttpURLConnection) lot_30.openConnection();
@@ -96,7 +97,7 @@ public class fetchData  extends AsyncTask<Void, Void, Void> {
                 lot_30_line = bufferedReader_lot_30.readLine();
                 data_lot_30 = data_lot_30 + lot_30_line;
             }
-            data_lot_30 = data_lot_30.substring(data_lot_30.indexOf("free_spaces") + 14, data_lot_30.indexOf("free_spaces") + 18);
+            data_lot_30 = data_lot_30.substring(data_lot_30.indexOf("free_spaces") + 14, data_lot_30.indexOf("\"",data_lot_30.indexOf("free_spaces") + 14));
             spaces_lot_30 = data_lot_30.replaceAll("[^0-9]", "");
 
             HttpURLConnection httpURLConnection_lot_32 = (HttpURLConnection) lot_32.openConnection();
@@ -107,7 +108,7 @@ public class fetchData  extends AsyncTask<Void, Void, Void> {
                 lot_32_line = bufferedReader_lot_32.readLine();
                 data_lot_32 = data_lot_32 + lot_32_line;
             }
-            data_lot_32 = data_lot_32.substring(data_lot_32.indexOf("free_spaces") + 14, data_lot_32.indexOf("free_spaces") + 17);
+            data_lot_32 = data_lot_32.substring(data_lot_32.indexOf("free_spaces") + 14, data_lot_32.indexOf("\"",data_lot_32.indexOf("free_spaces") + 14));
             spaces_lot_32 = data_lot_32.replaceAll("[^0-9]", "");
 
             HttpURLConnection httpURLConnection_lot_50 = (HttpURLConnection) lot_50.openConnection();
@@ -118,7 +119,7 @@ public class fetchData  extends AsyncTask<Void, Void, Void> {
                 lot_50_line = bufferedReader_lot_50.readLine();
                 data_lot_50 = data_lot_50 + lot_50_line;
             }
-            data_lot_50 = data_lot_50.substring(data_lot_50.indexOf("free_spaces") + 14, data_lot_50.indexOf("free_spaces") + 17);
+            data_lot_50 = data_lot_50.substring(data_lot_50.indexOf("free_spaces") + 14, data_lot_50.indexOf("\"",data_lot_50.indexOf("free_spaces") + 14));
             spaces_lot_50 = data_lot_50.replaceAll("[^0-9]", "");
 
         } catch (MalformedURLException e) {
