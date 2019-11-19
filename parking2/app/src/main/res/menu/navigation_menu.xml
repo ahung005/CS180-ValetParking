@@ -8,9 +8,9 @@
         android:icon="@mipmap/baseline_settings_applications_black_24"
         android:title="Settings"/>
 
-    <item android:id="@+id/nav_dashboard"
+    <item android:id="@+id/nav_recommendations"
         android:icon="@mipmap/baseline_dashboard_black_24"
-        android:title="My Dashboard"/>
+        android:title="Parking Recommendations"/>
 
     <item android:id="@+id/nav_logout"
         android:icon="@mipmap/baseline_exit_to_app_black_24"
