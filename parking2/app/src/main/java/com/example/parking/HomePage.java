@@ -121,7 +121,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 break;
             case R.id.nav_dashboard:
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), Recommendations.class));
                 break;
             case R.id.nav_logout:
                 FirebaseAuth.getInstance().signOut();
