@@ -1,7 +1,7 @@
-#Mon Nov 18 13:14:40 PST 2019
-base.0=C\:\\Users\\Marios\\Desktop\\Android\\CS180-ValetParking\\parking2\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+#Tue Nov 19 11:49:43 PST 2019
+base.0=/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\Marios\\Desktop\\Android\\CS180-ValetParking\\parking2\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.1=/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex

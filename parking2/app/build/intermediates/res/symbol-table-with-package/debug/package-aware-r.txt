@@ -1246,6 +1246,8 @@ id fixed
 id forever
 id friday
 id friday2
+id fridayRecommendedLot
+id fridaySchedule
 id ghost_view
 id gone
 id group_divider
@@ -1280,13 +1282,15 @@ id middle
 id mini
 id monday
 id monday2
+id mondayRecommendedLot
+id mondaySchedule
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
 id name
-id nav_dashboard
 id nav_logout
 id nav_profile
+id nav_recommendations
 id nav_settings
 id nav_view
 id navigation_header_container
@@ -1309,6 +1313,7 @@ id parallax
 id parent
 id parentPanel
 id parent_matrix
+id parkingRecommendation
 id password
 id passwordButton
 id percent
@@ -1400,6 +1405,8 @@ id textinput_error
 id textinput_helper_text
 id thursday
 id thursday2
+id thursdayRecommendedLot
+id thursdaySchedule
 id time
 id title
 id titleDividerNoCustom
@@ -1414,6 +1421,8 @@ id transition_scene_layoutid_cache
 id transition_transform
 id tuesday
 id tuesday2
+id tuesdayRecommendedLot
+id tuesdaySchedule
 id unchecked
 id uniform
 id unlabeled
@@ -1425,6 +1434,8 @@ id view_offset_helper
 id visible
 id wednesday
 id wednesday2
+id wednesdayRecommendedLot
+id wednesdaySchedule
 id wide
 id withText
 id wrap
@@ -1489,6 +1500,7 @@ layout activity_changepassword
 layout activity_changepermit
 layout activity_home
 layout activity_main
+layout activity_recommendations
 layout activity_register
 layout activity_remove
 layout activity_update_schedule

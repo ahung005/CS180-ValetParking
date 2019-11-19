@@ -6,141 +6,141 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="16"
-8-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml
+8-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="28" />
-9-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml
+9-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:6:5-67
-11-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:6:22-64
+11-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:6:5-67
+11-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:6:22-64
 12
 13    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 14    <!-- <uses-sdk android:minSdkVersion="14"/> -->
 15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-15-->[com.google.firebase:firebase-database:19.2.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\829c2c9fef73b753e2e0084cf78085fb\firebase-database-19.2.0\AndroidManifest.xml:25:5-79
-15-->[com.google.firebase:firebase-database:19.2.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\829c2c9fef73b753e2e0084cf78085fb\firebase-database-19.2.0\AndroidManifest.xml:25:22-76
+15-->[com.google.firebase:firebase-database:19.2.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/829c2c9fef73b753e2e0084cf78085fb/firebase-database-19.2.0/AndroidManifest.xml:25:5-79
+15-->[com.google.firebase:firebase-database:19.2.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/829c2c9fef73b753e2e0084cf78085fb/firebase-database-19.2.0/AndroidManifest.xml:25:22-76
 16
 17    <application
-17-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:8:5-31:19
+17-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:8:5-31:19
 18        android:name="com.example.parking.AppCtx"
-18-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:9:9-31
+18-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:9:9-31
 19        android:allowBackup="true"
-19-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:10:9-35
+19-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:10:9-35
 20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-20-->[androidx.core:core:1.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\3bcafbc2e95e113b9db4402c8bff255d\core-1.1.0\AndroidManifest.xml:24:18-86
+20-->[androidx.core:core:1.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/3bcafbc2e95e113b9db4402c8bff255d/core-1.1.0/AndroidManifest.xml:24:18-86
 21        android:debuggable="true"
 22        android:icon="@mipmap/ic_launcher"
-22-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:11:9-43
+22-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:11:9-43
 23        android:label="@string/app_name"
-23-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:12:9-41
+23-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:12:9-41
 24        android:roundIcon="@mipmap/ic_launcher_round"
-24-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:13:9-54
+24-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:13:9-54
 25        android:supportsRtl="true"
-25-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:14:9-35
+25-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:14:9-35
 26        android:testOnly="true"
 27        android:theme="@style/AppTheme" >
-27-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:15:9-40
+27-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:15:9-40
 28        <activity android:name="com.example.parking.Remove" />
-28-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:16:9-53
-28-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:16:19-41
+28-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:16:9-53
+28-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:16:19-41
 29        <activity android:name="com.example.parking.Add_Replace" />
-29-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:17:9-49
-29-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:17:19-46
+29-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:17:9-49
+29-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:17:19-46
 30        <activity android:name="com.example.parking.UpdateSchedule" />
-30-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:18:9-52
-30-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:18:19-49
+30-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:18:9-52
+30-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:18:19-49
 31        <activity android:name="com.example.parking.MainActivity" >
-31-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:19:9-25:20
-31-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:19:19-47
+31-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:19:9-25:20
+31-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:19:19-47
 32            <intent-filter>
-32-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:20:13-24:29
+32-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:20:13-24:29
 33                <action android:name="android.intent.action.MAIN" />
-33-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:21:17-69
-33-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:21:25-66
+33-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:21:17-69
+33-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:21:25-66
 34
 35                <category android:name="android.intent.category.LAUNCHER" />
-35-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:23:17-77
-35-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:23:27-74
+35-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:23:17-77
+35-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:23:27-74
 36            </intent-filter>
 37        </activity>
 38        <activity android:name="com.example.parking.Register" />
-38-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:26:9-46
-38-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:26:19-43
+38-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:26:9-46
+38-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:26:19-43
 39        <activity android:name="com.example.parking.Profile" />
-39-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:27:9-45
-39-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:27:19-42
+39-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:27:9-45
+39-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:27:19-42
 40        <activity android:name="com.example.parking.changePassword" />
-40-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:28:9-52
-40-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:28:19-49
+40-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:28:9-52
+40-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:28:19-49
 41        <activity android:name="com.example.parking.changePermit" />
-41-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:29:9-50
-41-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:29:19-47
+41-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:29:9-50
+41-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:29:19-47
 42        <activity android:name="com.example.parking.HomePage" />
-42-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:30:9-46
-42-->C:\Users\Marios\Desktop\Android\CS180-ValetParking\parking2\app\src\main\AndroidManifest.xml:30:19-43
+42-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:30:9-46
+42-->/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/src/main/AndroidManifest.xml:30:19-43
 43        <activity
-43-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:24:9-31:50
+43-->[com.google.firebase:firebase-auth:19.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:24:9-31:50
 44            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-44-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:25:13-85
+44-->[com.google.firebase:firebase-auth:19.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:25:13-85
 45            android:excludeFromRecents="true"
-45-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:26:13-46
+45-->[com.google.firebase:firebase-auth:19.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:26:13-46
 46            android:exported="true"
-46-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:27:13-36
+46-->[com.google.firebase:firebase-auth:19.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:27:13-36
 47            android:launchMode="singleTask"
-47-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:28:13-44
+47-->[com.google.firebase:firebase-auth:19.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:28:13-44
 48            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-48-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:29:13-102
+48-->[com.google.firebase:firebase-auth:19.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:29:13-102
 49            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-49-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:30:13-72
+49-->[com.google.firebase:firebase-auth:19.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:30:13-72
 50
 51        <service
-51-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:33:9-39:19
+51-->[com.google.firebase:firebase-auth:19.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:33:9-39:19
 52            android:name="com.google.firebase.components.ComponentDiscoveryService"
-52-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:34:13-84
+52-->[com.google.firebase:firebase-auth:19.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:34:13-84
 53            android:directBootAware="true"
-53-->[com.google.firebase:firebase-common:19.2.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\06ec54fa215c4869063d78d4b840bd64\firebase-common-19.2.0\AndroidManifest.xml:15:13-43
+53-->[com.google.firebase:firebase-common:19.2.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/06ec54fa215c4869063d78d4b840bd64/firebase-common-19.2.0/AndroidManifest.xml:15:13-43
 54            android:exported="false" >
-54-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:35:13-37
+54-->[com.google.firebase:firebase-auth:19.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:35:13-37
 55            <meta-data
-55-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:36:13-38:85
+55-->[com.google.firebase:firebase-auth:19.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:36:13-38:85
 56                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-56-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:37:17-109
+56-->[com.google.firebase:firebase-auth:19.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:37:17-109
 57                android:value="com.google.firebase.components.ComponentRegistrar" />
-57-->[com.google.firebase:firebase-auth:19.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\036bb3063c7e1212eb5a1f4aef58cca9\firebase-auth-19.1.0\AndroidManifest.xml:38:17-82
+57-->[com.google.firebase:firebase-auth:19.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/036bb3063c7e1212eb5a1f4aef58cca9/firebase-auth-19.1.0/AndroidManifest.xml:38:17-82
 58            <meta-data
-58-->[com.google.firebase:firebase-database:19.2.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\829c2c9fef73b753e2e0084cf78085fb\firebase-database-19.2.0\AndroidManifest.xml:32:13-34:85
+58-->[com.google.firebase:firebase-database:19.2.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/829c2c9fef73b753e2e0084cf78085fb/firebase-database-19.2.0/AndroidManifest.xml:32:13-34:85
 59                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-59-->[com.google.firebase:firebase-database:19.2.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\829c2c9fef73b753e2e0084cf78085fb\firebase-database-19.2.0\AndroidManifest.xml:33:17-109
+59-->[com.google.firebase:firebase-database:19.2.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/829c2c9fef73b753e2e0084cf78085fb/firebase-database-19.2.0/AndroidManifest.xml:33:17-109
 60                android:value="com.google.firebase.components.ComponentRegistrar" />
-60-->[com.google.firebase:firebase-database:19.2.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\829c2c9fef73b753e2e0084cf78085fb\firebase-database-19.2.0\AndroidManifest.xml:34:17-82
+60-->[com.google.firebase:firebase-database:19.2.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/829c2c9fef73b753e2e0084cf78085fb/firebase-database-19.2.0/AndroidManifest.xml:34:17-82
 61        </service>
 62
 63        <activity
-63-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\cfafb781a345d3f54848aefef9b2f0c0\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+63-->[com.google.android.gms:play-services-base:17.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/cfafb781a345d3f54848aefef9b2f0c0/play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
 64            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-64-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\cfafb781a345d3f54848aefef9b2f0c0\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+64-->[com.google.android.gms:play-services-base:17.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/cfafb781a345d3f54848aefef9b2f0c0/play-services-base-17.1.0/AndroidManifest.xml:24:13-79
 65            android:exported="false"
-65-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\cfafb781a345d3f54848aefef9b2f0c0\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+65-->[com.google.android.gms:play-services-base:17.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/cfafb781a345d3f54848aefef9b2f0c0/play-services-base-17.1.0/AndroidManifest.xml:25:13-37
 66            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-66-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\cfafb781a345d3f54848aefef9b2f0c0\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+66-->[com.google.android.gms:play-services-base:17.1.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/cfafb781a345d3f54848aefef9b2f0c0/play-services-base-17.1.0/AndroidManifest.xml:26:13-72
 67
 68        <provider
-68-->[com.google.firebase:firebase-common:19.2.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\06ec54fa215c4869063d78d4b840bd64\firebase-common-19.2.0\AndroidManifest.xml:19:9-23:39
+68-->[com.google.firebase:firebase-common:19.2.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/06ec54fa215c4869063d78d4b840bd64/firebase-common-19.2.0/AndroidManifest.xml:19:9-23:39
 69            android:name="com.google.firebase.provider.FirebaseInitProvider"
-69-->[com.google.firebase:firebase-common:19.2.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\06ec54fa215c4869063d78d4b840bd64\firebase-common-19.2.0\AndroidManifest.xml:20:13-77
+69-->[com.google.firebase:firebase-common:19.2.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/06ec54fa215c4869063d78d4b840bd64/firebase-common-19.2.0/AndroidManifest.xml:20:13-77
 70            android:authorities="com.example.parking.firebaseinitprovider"
-70-->[com.google.firebase:firebase-common:19.2.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\06ec54fa215c4869063d78d4b840bd64\firebase-common-19.2.0\AndroidManifest.xml:21:13-72
+70-->[com.google.firebase:firebase-common:19.2.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/06ec54fa215c4869063d78d4b840bd64/firebase-common-19.2.0/AndroidManifest.xml:21:13-72
 71            android:exported="false"
-71-->[com.google.firebase:firebase-common:19.2.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\06ec54fa215c4869063d78d4b840bd64\firebase-common-19.2.0\AndroidManifest.xml:22:13-37
+71-->[com.google.firebase:firebase-common:19.2.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/06ec54fa215c4869063d78d4b840bd64/firebase-common-19.2.0/AndroidManifest.xml:22:13-37
 72            android:initOrder="100" />
-72-->[com.google.firebase:firebase-common:19.2.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\06ec54fa215c4869063d78d4b840bd64\firebase-common-19.2.0\AndroidManifest.xml:23:13-36
+72-->[com.google.firebase:firebase-common:19.2.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/06ec54fa215c4869063d78d4b840bd64/firebase-common-19.2.0/AndroidManifest.xml:23:13-36
 73
 74        <meta-data
-74-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\b6cc7d61cf0eb6d6fb4fa856105dbc36\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+74-->[com.google.android.gms:play-services-basement:17.0.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/34ed1078106b5bf289327190360313dd/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
 75            android:name="com.google.android.gms.version"
-75-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\b6cc7d61cf0eb6d6fb4fa856105dbc36\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+75-->[com.google.android.gms:play-services-basement:17.0.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/34ed1078106b5bf289327190360313dd/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
 76            android:value="@integer/google_play_services_version" />
-76-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Marios\.gradle\caches\transforms-2\files-2.1\b6cc7d61cf0eb6d6fb4fa856105dbc36\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+76-->[com.google.android.gms:play-services-basement:17.0.0] /Users/MyStuff/.gradle/caches/transforms-2/files-2.1/34ed1078106b5bf289327190360313dd/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
 77    </application>
 78
 79</manifest>
