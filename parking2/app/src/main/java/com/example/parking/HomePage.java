@@ -120,7 +120,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
             case R.id.nav_settings:
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 break;
-            case R.id.nav_dashboard:
+            case R.id.nav_recommendations:
                 startActivity(new Intent(getApplicationContext(), Recommendations.class));
                 break;
             case R.id.nav_logout:
