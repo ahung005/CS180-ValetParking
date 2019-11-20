@@ -69,8 +69,8 @@ public final class R {
         public static final int icon_only = 0x7f090098;
         public static final int light = 0x7f0900a2;
         public static final int none = 0x7f0900c2;
-        public static final int standard = 0x7f090106;
-        public static final int wide = 0x7f09014c;
+        public static final int standard = 0x7f090107;
+        public static final int wide = 0x7f09014d;
     }
     public static final class string {
         private string() {}

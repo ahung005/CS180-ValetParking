@@ -3,6 +3,7 @@ package com.example.parking;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -14,8 +15,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.lang.reflect.Field;
 
 
 public class Recommendations extends AppCompatActivity  {
@@ -53,111 +52,120 @@ public class Recommendations extends AppCompatActivity  {
 
     public void setRecommendation()  {
         user = FirebaseAuth.getInstance().getCurrentUser();
-        getPermitType();
+        FirebaseDatabase.getInstance()
+            .getReference("Users")
+             .child(user.getUid())
+            .child("permit")
+            .addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        permitType = dataSnapshot.child("type").getValue(String.class);
+                        if (permitType.equals("Gold")) {
+                            Log.d("TAG", "I have a gold permit");
+                            FirebaseDatabase.getInstance()
+                                .getReference("Users")
+                                .child(user.getUid())
+                                .child("schedule")
+                                .addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.exists()) {
+                                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                                day = snapshot.getKey();
+                                                course_name = snapshot.child("course_name").getValue(String.class);
+                                                time = snapshot.child("time").getValue(String.class);
+                                                building = snapshot.child("building").getValue(String.class);
+                                                tv = findViewById(getScheduleViewId());
+                                                tv2 = findViewById(getLotViewId());
 
-        if (permitType.equals("Gold")) {
-            Log.d("TAG", "I have a gold permit");
-            FirebaseDatabase.getInstance()
-                    .getReference("Users")
-                    .child(user.getUid())
-                    .child("schedule")
-                    .addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            if (dataSnapshot.exists()) {
-                                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                                    day = snapshot.getKey();
-                                    course_name = snapshot.child("course_name").getValue(String.class);
-                                    time = snapshot.child("time").getValue(String.class);
-                                    building = snapshot.child("building").getValue(String.class);
-                                    tv = findViewById(getScheduleViewId());
-                                    tv2 = findViewById(getLotViewId());
-                                    if (!course_name.isEmpty()) {
-                                        tv.setText(day + ": " + course_name + ", " + time + ", " + building);
-                                    } else {
-                                        tv.setText(day + ": None");
-                                        tv2.setText("Recommended Lot: None");
-                                        continue;
-                                    }
-                                    getRecommendedLot();
-                                    tv2.setText("Recommended Lot: " + recommendedLot);
-                                }
-                            } else {
-                                Toast.makeText(Recommendations.this, "Doesn't Exist",
-                                        Toast.LENGTH_LONG).show();
-                            }
-                        }
+                                                if (!day.isEmpty())
+                                                    day = day.substring(0, 1).toUpperCase() + day.substring(1);
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-                            Toast.makeText(Recommendations.this, databaseError.toString(),
-                                    Toast.LENGTH_LONG).show();
-                        }
-                    });
-        }
-        else if (permitType.equals("Red") || permitType.equals("Blue")) {
-            Log.d("TAG", "I have a" + permitType +  "permit");
-                FirebaseDatabase.getInstance()
-                        .getReference("Users")
-                        .child(user.getUid())
-                        .child("schedule")
-                        .addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                if (dataSnapshot.exists()) {
-                                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                                        tv = findViewById(R.id.mondaySchedule);
-                                        day = snapshot.getKey();
-                                        course_name = snapshot.child("course_name").getValue(String.class);
-                                        time = snapshot.child("time").getValue(String.class);
-                                        building = snapshot.child("building").getValue(String.class);
-                                        tv = findViewById(getScheduleViewId());
-                                        tv2 = findViewById(getLotViewId());
-                                        if (!course_name.isEmpty()) {
-                                            tv.setText(day + ": " + course_name + ", " + time + ", " + building);
+                                                if (!course_name.isEmpty()) {
+                                                    tv.setText(day + ": " + course_name + ", " + time + ", " + building);
+                                                } else {
+                                                    tv.setText(day + ": None");
+                                                    tv2.setText("Recommended Lot: None");
+                                                    continue;
+                                                }
+                                                getRecommendedLot();
+                                                tv2.setText("Recommended Lot: " + recommendedLot);
+                                            }
                                         } else {
-                                            tv.setText(day + ": None");
-                                            tv2.setText("Recommended Lot: None");
-                                            continue;
+                                            Toast.makeText(Recommendations.this, "Doesn't Exist",
+                                                    Toast.LENGTH_LONG).show();
                                         }
-                                        getRecommendedLot();
-                                        tv2.setText("Recommended Lot: " + recommendedLot + bundle.getString("lot_50"));
                                     }
-                                } else {
-                                    Toast.makeText(Recommendations.this, "Doesn't Exist",
-                                            Toast.LENGTH_LONG).show();
-                                }
-                            }
 
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
-                                Toast.makeText(Recommendations.this, databaseError.toString(),
-                                        Toast.LENGTH_LONG).show();
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                                        Toast.makeText(Recommendations.this, databaseError.toString(),
+                                                Toast.LENGTH_LONG).show();
+                                    }
+                                });
+                        }
+                        else if (permitType.equals("Red") || permitType.equals("Blue")) {
+                            Log.d("TAG", "I have a" + permitType +  "permit");
+                            FirebaseDatabase.getInstance()
+                                .getReference("Users").child(user.getUid())
+                                .child("schedule")
+                                .addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                        if (dataSnapshot.exists()) {
+                                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                                day = snapshot.getKey().toLowerCase();
+                                                course_name = snapshot.child("course_name").getValue(String.class);
+                                                time = snapshot.child("time").getValue(String.class);
+                                                building = snapshot.child("building").getValue(String.class);
+                                                tv = findViewById(getScheduleViewId());
+                                                tv2 = findViewById(getLotViewId());
 
-                            }
-                        });
-        }
+                                                day = day.substring(0, 1).toUpperCase() + day.substring(1);
+                                                if (!course_name.isEmpty()) {
+                                                    tv.setText(day + ": " + course_name + ", " + time + ", " + building);
+                                                } else {
+                                                    tv.setText(day + ": None");
+                                                    tv2.setText("Recommended Lot: None");
+                                                    continue;
+                                                }
+                                                getRecommendedLot();
+                                                tv2.setText("Recommended Lot: " + recommendedLot);
+                                            }
+                                        } else {
+                                            Toast.makeText(Recommendations.this, "Doesn't Exist",
+                                                    Toast.LENGTH_LONG).show();
+                                        }
+                                    }
 
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                                        Toast.makeText(Recommendations.this, databaseError.toString(),
+                                                Toast.LENGTH_LONG).show();
+                                    }
+                                });
+                        }
+                    } else {
+                        Log.d("TAG", "Permit does not work");
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    Log.d("TAG", "Does not work at all");
+                }
+            });
     }
 
     private int getScheduleViewId()  {
-        try {
-            Field idField = R.layout.class.getDeclaredField(day.toLowerCase() + "Schedule");
-            return idField.getInt(idField);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return -1;
-        }
+        Resources res = getResources();
+        return res.getIdentifier(day + "Schedule", "id", "com.example.parking");
     }
 
     private int getLotViewId() {
-        try {
-            Field idField = R.layout.class.getDeclaredField(day.toLowerCase() + "RecommendedLot");
-            return idField.getInt(idField);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return -1;
-        }
+        Resources res = getResources();
+        return res.getIdentifier(day + "RecommendedLot", "id", "com.example.parking");
     }
 
     private void getRecommendedLot() {
@@ -190,25 +198,5 @@ public class Recommendations extends AppCompatActivity  {
                 recommendedLot = "Lot 50";
             }
         }
-    }
-    private void getPermitType() {
-        FirebaseDatabase.getInstance()
-                .getReference("Users")
-                .child(user.getUid())
-                .child("permit")
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            permitType = dataSnapshot.child("type").getValue(String.class);
-                        } else {
-                            Log.d("TAG", "Permit does not work");
-                        }
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Log.d("TAG", "Does not work at all");
-                    }
-                });
     }
 }

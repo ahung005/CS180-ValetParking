@@ -2,6 +2,8 @@ package com.example.parking;
 
 import android.text.style.TtsSpan;
 
+import com.google.firebase.database.PropertyName;
+
 // We can use Hashmap later if we decide to change only first class (store first class)
 // Remember that we can't account for a morning and night class if morning class is dropped
 // or for holidays
@@ -24,6 +26,7 @@ public class Schedule
         this.Thursday = thur;
         this.Friday = fri;
     }
+
     public static class Monday extends Weekday
     {
         public Monday() {
