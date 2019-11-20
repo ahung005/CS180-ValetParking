@@ -29,6 +29,7 @@
         <activity android:name=".changePermit" />
         <activity android:name=".HomePage" />
         <activity android:name=".Recommendations" />
+        <activity android:name=".LotInfo" />
     </application>
 
 </manifest>

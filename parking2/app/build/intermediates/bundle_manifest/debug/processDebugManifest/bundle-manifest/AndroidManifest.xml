@@ -40,6 +40,7 @@
         <activity android:name="com.example.parking.changePermit" />
         <activity android:name="com.example.parking.HomePage" />
         <activity android:name="com.example.parking.Recommendations" />
+        <activity android:name="com.example.parking.LotInfo" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

@@ -1252,6 +1252,7 @@ id ghost_view
 id gone
 id group_divider
 id groups
+id header
 id home
 id homeAsUp
 id icon
@@ -1500,6 +1501,7 @@ layout activity_add__replace
 layout activity_changepassword
 layout activity_changepermit
 layout activity_home
+layout activity_lotinfo
 layout activity_main
 layout activity_recommendations
 layout activity_register

@@ -11,6 +11,8 @@ import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -65,6 +67,100 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         textView_lot_32 = (TextView) findViewById(R.id.textView_lot_32);
         textView_lot_50 = (TextView) findViewById(R.id.textView_lot_50);
 
+        setupbuttons();
+
+
+
+
+
+    }
+
+    private void setupbuttons(){
+        Button bigsp = findViewById(R.id.button1);
+        Button lot6 = findViewById(R.id.button2);
+        Button lot24 = findViewById(R.id.button3);
+        Button lot26 = findViewById(R.id.button4);
+        Button lot30 = findViewById(R.id.button5);
+        Button lot32 = findViewById(R.id.button6);
+        Button lot50 = findViewById(R.id.button7);
+
+        bigsp.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent myIntent = new Intent(HomePage.this, LotInfo.class);
+                myIntent.putExtra("name", "Big Springs"); //Optional parameters
+                myIntent.putExtra("builds", "Orbach, Physics, Chung, Bourns, Boyce, Webber"); //Optional parameters
+                myIntent.putExtra("maps", "http://maps.google.com/maps?q=loc:33.9753,-117.320114" + " (Big Springs)" );
+                myIntent.putExtra("time", "7 min");
+                HomePage.this.startActivity(myIntent);
+
+            }
+        });
+        lot6.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent myIntent = new Intent(HomePage.this, LotInfo.class);
+                myIntent.putExtra("name", "Lot 6"); //Optional parameters
+                myIntent.putExtra("builds", "Psychology, Olmsted, Humanities, Watkins, Sproul"); //Optional parameters
+                myIntent.putExtra("maps", "http://maps.google.com/maps?q=loc:33.969791,-117.327579" + " (Lot 6)" );
+                myIntent.putExtra("time", "4 min");
+                HomePage.this.startActivity(myIntent);
+            }
+        });
+        lot24.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent myIntent = new Intent(HomePage.this, LotInfo.class);
+                myIntent.putExtra("name", "Lot 24"); //Optional parameters
+                myIntent.putExtra("builds", "MSE, UNLH, Skye, CHASS, Bourns, Chung"); //Optional parameters
+                myIntent.putExtra("maps", "http://maps.google.com/maps?q=loc:33.978020,-117.330716" + " (Lot  24)" );
+                myIntent.putExtra("time", "6 min");
+                HomePage.this.startActivity(myIntent);
+            }
+        });
+        lot26.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent myIntent = new Intent(HomePage.this, LotInfo.class);
+                myIntent.putExtra("name", "Lot 26"); //Optional parameters
+                myIntent.putExtra("builds", "MSE, UNLH, Skye, CHASS, Bourns, Chung");
+                myIntent.putExtra("maps", "http://maps.google.com/maps?q=loc:33.981198,-117.334054" + " (Lot 26)" );
+                myIntent.putExtra("time", "18 min");
+                HomePage.this.startActivity(myIntent);
+
+            }
+        });
+        lot30.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent myIntent = new Intent(HomePage.this, LotInfo.class);
+                myIntent.putExtra("name", "Lot 30"); //Optional parameters
+                myIntent.putExtra("builds", "Olmsted, Humanities, Watkins, H&SS");
+                myIntent.putExtra("maps", "http://maps.google.com/maps?q=loc:33.970508,-117.331924" + " (Lot 30)" );
+                myIntent.putExtra("time", "10 min");
+                HomePage.this.startActivity(myIntent);
+
+            }
+        });
+        lot32.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent myIntent = new Intent(HomePage.this, LotInfo.class);
+                myIntent.putExtra("name", "Lot 32"); //Optional parameters
+                myIntent.putExtra("builds", "Olmsted, Humanities, Watkins, H&SS");
+                myIntent.putExtra("maps", "http://maps.google.com/maps?q=loc:33.968962,-117.330248" + " (Lot 32)" );
+                myIntent.putExtra("time", "11 min");
+                HomePage.this.startActivity(myIntent);
+
+            }
+        });
+        lot50.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent myIntent = new Intent(HomePage.this, LotInfo.class);
+                myIntent.putExtra("name", "Lot 50"); //Optional parameters
+                myIntent.putExtra("builds", "Arts, CHASS, UNLH, H&SS, Sproul");
+                myIntent.putExtra("maps", "http://maps.google.com/maps?q=loc:33.974956,-117.336570" + " (Lot 50)" );
+                myIntent.putExtra("time", "14 min");
+                HomePage.this.startActivity(myIntent);
+
+            }
+        });
+
+        return;
     }
 
     private final Runnable m_Runnable = new Runnable() {
