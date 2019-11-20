@@ -170,32 +170,27 @@ public class Recommendations extends AppCompatActivity  {
 
     private void getRecommendedLot() {
         if (permitType.equals("Gold")) {
-            if (building.equals("UV Theatre") || building.equals("Olmsted")
+            if ( building.equals("Olmsted")
                     || building.equals("Boyce") || building.equals("Life Sciences")
-                    || building.equals("Watkins") || building.equals("Sproul") ||
-                    building.equals("Pierce") || building.equals("Spieth")) {
+                    || building.equals("Pierce") || building.equals("Spieth")) {
                 recommendedLot = "Lot 32";
-            } else if (building.equals("Hum/SS")) {
+            } else if ( building.equals("Watkins") || building.equals("Sproul") || building.equals("Hum/SS")) {
                 recommendedLot = "Lot 30";
-            } else if (building.equals("Skye") || building.equals("MSE")
+            } else if (building.equals("UV Theatre") || building.equals("Skye") || building.equals("MSE")
                     || building.equals("UNLH") || building.equals("CHASS North")
                     || building.equals("Bourns") || building.equals("Chung")
                     || building.equals("CHASS South") || building.equals("Physics")) {
                 recommendedLot = "Lot 50";
             }
         } else {
-            if (building.equals("UV Theatre") || building.equals("Olmsted")
-                    || building.equals("Boyce") || building.equals("Life Sciences")
-                    || building.equals("Watkins") || building.equals("Sproul") ||
-                    building.equals("Pierce") || building.equals("Spieth")) {
-                recommendedLot = "Lot 32";
-            } else if (building.equals("Hum/SS")) {
-                recommendedLot = "Lot 30";
-            } else if (building.equals("Skye") || building.equals("MSE")
+            if ( building.equals("Spieth") || building.equals("Olmsted") || building.equals("Life Sciences")
+                    || building.equals("Sproul") || building.equals("Hum/SS") || building.equals("Watkins")) {
+                recommendedLot = "Lot 6";
+            } else if (building.equals("UV Theatre") || building.equals("Boyce") || building.equals("Skye") || building.equals("MSE")
                     || building.equals("UNLH") || building.equals("CHASS North")
                     || building.equals("Bourns") || building.equals("Chung")
-                    || building.equals("CHASS South") || building.equals("Physics")) {
-                recommendedLot = "Lot 50";
+                    || building.equals("CHASS South") || building.equals("Physics")  || building.equals("Pierce") ) {
+                recommendedLot = "Lot 24";
             }
         }
     }
