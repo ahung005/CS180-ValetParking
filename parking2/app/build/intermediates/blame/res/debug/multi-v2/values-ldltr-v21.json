@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/MyStuff/AndroidStudioProjects/CS180-ValetParking_11_19_19/parking2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
+            "outputFile": "C:\\Users\\Dan\\AndroidStudioProjects\\CS180-ValetParking\\parking2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldltr-v21\\values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "/Users/MyStuff/.gradle/caches/transforms-2/files-2.1/8b7b145040f80622d5d2271a1f9fca83/appcompat-1.1.0/res/values-ldltr-v21/values-ldltr-v21.xml",
+                    "source": "C:\\Users\\Dan\\.gradle\\caches\\transforms-2\\files-2.1\\8b7b145040f80622d5d2271a1f9fca83\\appcompat-1.1.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

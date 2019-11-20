@@ -31,6 +31,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     public static TextView textView_lot_32;
     public static TextView textView_lot_50;
 
+//
     Handler mHandler;
 
     @Override
@@ -39,7 +40,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         setContentView(R.layout.activity_home);
         this.mHandler = new Handler();
         m_Runnable.run();
-
+//
         // Drawer
         mDrawerLayout = findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
@@ -68,7 +69,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
 
     private final Runnable m_Runnable = new Runnable() {
         public void run() {
-            com.example.test.fetchData process = new com.example.test.fetchData();
+            com.example.parking.fetchData process = new com.example.parking.fetchData();
             process.execute();
             HomePage.this.mHandler.postDelayed(m_Runnable,60000);
         }
@@ -115,19 +116,29 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_profile:
-                startActivity(new Intent(getApplicationContext(), Profile.class));
+                startActivity(new Intent(HomePage.this, Profile.class));
                 break;
             case R.id.nav_settings:
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(HomePage.this, MainActivity.class));
                 break;
             case R.id.nav_recommendations:
-                startActivity(new Intent(getApplicationContext(), Recommendations.class));
+                Intent intent = new Intent(HomePage.this, Recommendations.class);
+                Bundle extras = new Bundle();
+                extras.putString("big_springs", textView_big_springs.getText().toString());
+                extras.putString("lot_6", textView_lot_6.getText().toString());
+                extras.putString("lot_24", textView_lot_24.getText().toString());
+                extras.putString("lot_26", textView_lot_26.getText().toString());
+                extras.putString("lot_30", textView_lot_30.getText().toString());
+                extras.putString("lot_32", textView_lot_32.getText().toString());
+                extras.putString("lot_50", textView_lot_50.getText().toString());
+                intent.putExtras(extras);
+                startActivity(intent);
                 break;
             case R.id.nav_logout:
                 FirebaseAuth.getInstance().signOut();
                 Toast.makeText(HomePage.this, "Sign out successful",
                         Toast.LENGTH_LONG).show();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(HomePage.this, MainActivity.class));
                 break;
         }
         DrawerLayout drawer = findViewById(R.id.drawerLayout);
@@ -135,5 +146,5 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         return true;
     }
 
-    //make chage
+    //ma
 }

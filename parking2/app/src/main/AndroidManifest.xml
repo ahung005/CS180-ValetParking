@@ -28,6 +28,7 @@
         <activity android:name=".changePassword" />
         <activity android:name=".changePermit" />
         <activity android:name=".HomePage" />
+        <activity android:name=".Recommendations" />
     </application>
 
 </manifest>
