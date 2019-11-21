@@ -61,53 +61,8 @@ public class Recommendations extends AppCompatActivity  {
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if (dataSnapshot.exists()) {
                         permitType = dataSnapshot.child("type").getValue(String.class);
-                        if (permitType.equals("Gold")) {
-                            Log.d("TAG", "I have a gold permit");
-                            FirebaseDatabase.getInstance()
-                                .getReference("Users")
-                                .child(user.getUid())
-                                .child("schedule")
-                                .addListenerForSingleValueEvent(new ValueEventListener() {
-                                    @Override
-                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                        if (dataSnapshot.exists()) {
-                                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                                                day = snapshot.getKey();
-                                                course_name = snapshot.child("course_name").getValue(String.class);
-                                                time = snapshot.child("time").getValue(String.class);
-                                                building = snapshot.child("building").getValue(String.class);
-                                                tv = findViewById(getScheduleViewId());
-                                                tv2 = findViewById(getLotViewId());
-
-                                                if (!day.isEmpty())
-                                                    day = day.substring(0, 1).toUpperCase() + day.substring(1);
-
-                                                if (!course_name.isEmpty()) {
-                                                    tv.setText(day + ": " + course_name + ", " + time + ", " + building);
-                                                } else {
-                                                    tv.setText(day + ": None");
-                                                    tv2.setText("Recommended Lot: None");
-                                                    continue;
-                                                }
-                                                getRecommendedLot();
-                                                tv2.setText("Recommended Lot: " + recommendedLot);
-                                            }
-                                        } else {
-                                            Toast.makeText(Recommendations.this, "Doesn't Exist",
-                                                    Toast.LENGTH_LONG).show();
-                                        }
-                                    }
-
-                                    @Override
-                                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                                        Toast.makeText(Recommendations.this, databaseError.toString(),
-                                                Toast.LENGTH_LONG).show();
-                                    }
-                                });
-                        }
-                        else if (permitType.equals("Red") || permitType.equals("Blue")) {
-                            Log.d("TAG", "I have a" + permitType +  "permit");
-                            FirebaseDatabase.getInstance()
+                        Log.d("TAG", "I have a" + permitType +  "permit");
+                        FirebaseDatabase.getInstance()
                                 .getReference("Users").child(user.getUid())
                                 .child("schedule")
                                 .addListenerForSingleValueEvent(new ValueEventListener() {
@@ -145,7 +100,6 @@ public class Recommendations extends AppCompatActivity  {
                                                 Toast.LENGTH_LONG).show();
                                     }
                                 });
-                        }
                     } else {
                         Log.d("TAG", "Permit does not work");
                     }
