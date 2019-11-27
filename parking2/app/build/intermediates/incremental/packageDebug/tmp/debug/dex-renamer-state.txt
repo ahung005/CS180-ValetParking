@@ -1,7 +1,7 @@
-#Wed Nov 20 08:18:09 PST 2019
-base.0=/Users/anthonyyip/Desktop/p2/CS180-ValetParking/parking2/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
+#Wed Nov 27 09:08:09 PST 2019
+base.0=/Users/newuser/Documents/GitHub/CS180-ValetParking/parking2/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=/Users/anthonyyip/Desktop/p2/CS180-ValetParking/parking2/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex
+base.1=/Users/newuser/Documents/GitHub/CS180-ValetParking/parking2/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex

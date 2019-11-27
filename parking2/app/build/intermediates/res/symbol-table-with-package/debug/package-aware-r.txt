@@ -1289,10 +1289,11 @@ id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
 id name
+id nav_dashboard
 id nav_logout
+id nav_notifications
 id nav_profile
 id nav_recommendations
-id nav_settings
 id nav_view
 id navigation_header_container
 id never
@@ -1539,6 +1540,7 @@ layout support_simple_spinner_dropdown_item
 menu navigation_menu
 mipmap baseline_dashboard_black_24
 mipmap baseline_exit_to_app_black_24
+mipmap baseline_notifications_black_24
 mipmap baseline_person_black_24
 mipmap baseline_settings_applications_black_24
 mipmap ic_launcher

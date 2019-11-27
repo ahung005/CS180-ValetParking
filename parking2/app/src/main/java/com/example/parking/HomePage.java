@@ -214,7 +214,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
             case R.id.nav_profile:
                 startActivity(new Intent(HomePage.this, Profile.class));
                 break;
-            case R.id.nav_settings:
+            case R.id.nav_dashboard:
                 startActivity(new Intent(HomePage.this, MainActivity.class));
                 break;
             case R.id.nav_recommendations:
@@ -229,6 +229,9 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 extras.putString("lot_50", textView_lot_50.getText().toString());
                 intent.putExtras(extras);
                 startActivity(intent);
+                break;
+            case R.id.nav_notifications:
+                startActivity(new Intent(HomePage.this, MainActivity.class));
                 break;
             case R.id.nav_logout:
                 FirebaseAuth.getInstance().signOut();
