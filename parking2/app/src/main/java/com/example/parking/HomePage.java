@@ -58,7 +58,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     String day;
     String time;
     final DateFormat df = new SimpleDateFormat("HH:mm:ss");
-    String userTime = "12:38:00";
+    String userTime = "13:02:00";
     //
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -366,7 +366,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 startActivity(new Intent(HomePage.this, Profile.class));
                 break;
             case R.id.nav_dashboard:
-                startActivity(new Intent(HomePage.this, MainActivity.class));
+                startActivity(new Intent(HomePage.this, Dashboard.class));
                 break;
             case R.id.nav_recommendations:
                 Intent intent = new Intent(HomePage.this, Recommendations.class);
