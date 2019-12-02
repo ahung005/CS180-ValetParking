@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Remove"></activity>
+        <activity android:name=".Notification"></activity>
+        <activity android:name=".Remove" />
         <activity android:name=".Add_Replace" />
         <activity android:name=".UpdateSchedule" />
         <activity android:name=".MainActivity">
@@ -30,7 +31,7 @@
         <activity android:name=".HomePage" />
         <activity android:name=".Recommendations" />
         <activity android:name=".LotInfo" />
-        <activity android:name=".Dashboard"/>
+        <activity android:name=".Dashboard" />
     </application>
 
 </manifest>

@@ -9,7 +9,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlarmManager;
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -382,7 +381,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 startActivity(intent);
                 break;
             case R.id.nav_notifications:
-                startActivity(new Intent(HomePage.this, MainActivity.class));
+                startActivity(new Intent(HomePage.this, Notification.class));
                 break;
             case R.id.nav_logout:
                 FirebaseAuth.getInstance().signOut();

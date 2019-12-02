@@ -26,6 +26,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.parking.Notification" />
         <activity android:name="com.example.parking.Remove" />
         <activity android:name="com.example.parking.Add_Replace" />
         <activity android:name="com.example.parking.UpdateSchedule" />
@@ -43,6 +44,7 @@
         <activity android:name="com.example.parking.HomePage" />
         <activity android:name="com.example.parking.Recommendations" />
         <activity android:name="com.example.parking.LotInfo" />
+        <activity android:name="com.example.parking.Dashboard" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

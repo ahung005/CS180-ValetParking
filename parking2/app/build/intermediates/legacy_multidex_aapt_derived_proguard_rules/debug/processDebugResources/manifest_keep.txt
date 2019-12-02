@@ -1,4 +1,4 @@
-# Referenced at /Users/newuser/Documents/GitHub/CS180-ValetParking/parking2/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml:17
+# Referenced at /Applications/Android Studio.app/Contents/bin/V5/Users/MyStuff/AndroidStudioProjects/CS180-ValetParkingV5/parking2/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml:17
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
-# Referenced at /Users/newuser/Documents/GitHub/CS180-ValetParking/parking2/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml:17
+# Referenced at /Applications/Android Studio.app/Contents/bin/V5/Users/MyStuff/AndroidStudioProjects/CS180-ValetParkingV5/parking2/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml:17
 -keep class com.example.parking.AppCtx { <init>(); }

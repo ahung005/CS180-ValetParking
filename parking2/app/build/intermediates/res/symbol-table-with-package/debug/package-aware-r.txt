@@ -1084,6 +1084,7 @@ drawable googleg_standard_color_18
 drawable green_button
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_local_parking_black_24dp
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
@@ -1170,6 +1171,11 @@ id actions
 id activity_chooser_view_content
 id add
 id add_replaceTitle
+id additionalLot24
+id additionalLot26
+id additionalLot30
+id additionalLot50
+id additionalLot6
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1238,6 +1244,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id expiration
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1277,6 +1284,12 @@ id listMode
 id list_item
 id login
 id login_header
+id lot24
+id lot26
+id lot30
+id lot32
+id lot50
+id lot6
 id masked
 id message
 id middle
@@ -1302,6 +1315,10 @@ id newPasswordEditText2
 id newPasswordTextView
 id none
 id normal
+id notiEditText
+id notiText1
+id notiText2
+id notiUpdateButton
 id notification_background
 id notification_main_column
 id notification_main_column_container
@@ -1319,6 +1336,7 @@ id parkingRecommendation
 id password
 id passwordButton
 id percent
+id permitColor
 id permitSpinner
 id permitType
 id pin
@@ -1374,6 +1392,7 @@ id start
 id stretch
 id submenuarrow
 id submit_area
+id switch1
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -1389,6 +1408,7 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView
 id textView2
 id textView3
 id textView5
@@ -1411,6 +1431,7 @@ id thursdaySchedule
 id time
 id title
 id titleDividerNoCustom
+id titleText
 id title_template
 id top
 id topPanel
@@ -1501,9 +1522,11 @@ layout abc_tooltip
 layout activity_add__replace
 layout activity_changepassword
 layout activity_changepermit
+layout activity_dashboard
 layout activity_home
 layout activity_lotinfo
 layout activity_main
+layout activity_notification
 layout activity_recommendations
 layout activity_register
 layout activity_remove
