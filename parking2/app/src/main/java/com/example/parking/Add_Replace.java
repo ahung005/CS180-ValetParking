@@ -190,13 +190,11 @@ public class Add_Replace extends AppCompatActivity implements OnItemSelectedList
         if(parent.getId() == R.id.daySpinner)
         {
             String text = parent.getItemAtPosition(position).toString();
-            Toast.makeText(parent.getContext(), text, Toast.LENGTH_LONG).show();
             daySel = text.toLowerCase();
         }
         else if(parent.getId() == R.id.buildingSpinner)
         {
             String text = parent.getItemAtPosition(position).toString();
-            Toast.makeText(parent.getContext(), text, Toast.LENGTH_LONG).show();
             buildingSel = text;
         }
     }

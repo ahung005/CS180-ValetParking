@@ -86,7 +86,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
             editTextConfirmPass.requestFocus();
             return;
         }
+        // All fields valid. Disable button (avoid issues with multiple clicks)
+        findViewById(R.id.button_register).setClickable(false);
 
+        // Create user
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override

@@ -28,6 +28,7 @@ public class Notification extends AppCompatActivity {
 
     private Switch switch1;
     private FirebaseUser user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,8 +86,7 @@ public class Notification extends AppCompatActivity {
                             switch1.setChecked(((String)dataSnapshot.getValue()).matches("ON"));
                         }
                         else {
-                            Toast.makeText(Notification.this, "Shit don't exist",
-                                    Toast.LENGTH_LONG).show();
+                            Log.e("Notification", "getNoficationSwitchVal: Error: notifications val missing!");
                         }
 
                     }

@@ -67,12 +67,8 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     String day;
     String time;
     final DateFormat df = new SimpleDateFormat("HH:mm:ss");
-<<<<<<< HEAD
-    String userTime = "08:44:00";
-=======
+
     String userTime = "";
->>>>>>> notification and notification page work with database
-    //
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -462,8 +458,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                             if (dataSnapshot.exists()) {
                                 notificationsOn = ((String) dataSnapshot.getValue()).matches("ON");
                             } else {
-                                Toast.makeText(HomePage.this, "Shit don't exist",
-                                        Toast.LENGTH_LONG).show();
+                                Log.e("Homepage", "getNoficationSwitchVal: Error: notifications val missing!");
                             }
 
                         }
@@ -490,22 +485,20 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                                 String hoursBefore = dataSnapshot.child("notificationHours").getValue(String.class);
                                 if (hoursBefore != null) {
                                     notificationsHours = Integer.parseInt(hoursBefore);
+
+                                    // Get today's day of the week
+                                    SimpleDateFormat formatter = new SimpleDateFormat("EEEE");
+                                    String day = formatter.format(Calendar.getInstance().getTime());
+
+                                   // Get time of today's alarm
+                                   String databaseTime = dataSnapshot.child("schedule").child(day).child("time").getValue(String.class);
+                                    updateUserTime(Integer.parseInt(hoursBefore), databaseTime);
+
+                                    //DataSnapshot schedule = dataSnapshot.child("Schedule");
+                                    //for (DataSnapshot snapshot : dataSnapshot.getChildren()) {}
                                 }
-
-                                // Get today's day of the week
-                                SimpleDateFormat formatter = new SimpleDateFormat("EEEE");
-                                String day = formatter.format(Calendar.getInstance().getTime());
-
-                                // Get time of today's alarm
-                                String databaseTime = dataSnapshot.child("schedule").child("wednesday").child("time").getValue(String.class);
-                                updateUserTime(Integer.parseInt(hoursBefore), databaseTime);
-
-                                //DataSnapshot schedule = dataSnapshot.child("Schedule");
-                                //for (DataSnapshot snapshot : dataSnapshot.getChildren()) {}
-
                             } else {
-                                Toast.makeText(HomePage.this, "Shit don't exist",
-                                        Toast.LENGTH_LONG).show();
+                                Log.e("Homepage", "getNoficationHours: Error: User doesn't exist" );
                             }
 
                         }

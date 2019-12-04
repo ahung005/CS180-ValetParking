@@ -30,7 +30,7 @@ public class changePassword extends AppCompatActivity {
         setContentView(R.layout.activity_changepassword);
 
 
-        Button passwordButton = findViewById(R.id.passwordButton);
+        final Button passwordButton = findViewById(R.id.passwordButton);
         passwordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +39,7 @@ public class changePassword extends AppCompatActivity {
                 newPasswordEditText2 =  findViewById(R.id.newPasswordEditText2);
 
                 if(validateForm()) {
+                    passwordButton.setClickable(false);
                     ChangePass(oldPass, newPass);
                 }
             }

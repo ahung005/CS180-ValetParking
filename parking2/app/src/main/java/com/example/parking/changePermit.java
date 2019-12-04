@@ -80,11 +80,12 @@ public class changePermit extends AppCompatActivity implements AdapterView.OnIte
         permitSpinner.setOnItemSelectedListener(this);
 
         // Handle the 'UPDATE' button
-        Button updatePermitButton = (Button) findViewById(R.id.updatePermitButton);
+        final Button updatePermitButton = (Button) findViewById(R.id.updatePermitButton);
         updatePermitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (validateForm()) {
+                    updatePermitButton.setClickable(false);
                     String type = mpermitTextView.getText().toString();
                     String expiration = mdisplayDate.getText().toString();
                     ChangePermit(type, expiration);

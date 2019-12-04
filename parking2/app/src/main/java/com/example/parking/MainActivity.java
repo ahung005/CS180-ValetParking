@@ -63,9 +63,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Check email, password that are entered in your Email and Pass views
     // The response will tell you whether the signIn was successful or not
+    // Disable button if successful (avoid issues with multiple clicks)
     // Cases: Success, Failure
     private void LoginUser(String email, String password) {
         if (validateForm()) {
+            (findViewById(R.id.login)).setClickable(false);
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
