@@ -1,2 +1,0 @@
-# Referenced at /Users/anthonyyip/Desktop/p2/CS180-ValetParking/parking2/app/build/intermediates/merged_manifests/debugAndroidTest/AndroidManifest.xml:9
--keep class androidx.test.runner.AndroidJUnitRunner { <init>(); }

@@ -57,7 +57,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     String day;
     String time;
     final DateFormat df = new SimpleDateFormat("HH:mm:ss");
-    String userTime = "13:02:00";
+    String userTime = "08:44:00";
     //
 
     @RequiresApi(api = Build.VERSION_CODES.O)

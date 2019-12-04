@@ -3,9 +3,12 @@ package com.example.parking;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +19,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Recommendations extends AppCompatActivity  {
     private String day; // stores the day of the class
@@ -24,6 +30,15 @@ public class Recommendations extends AppCompatActivity  {
     private String building; //stores the name of the building for class
     private String recommendedLot; // stores the closest recommended lot based on the building name
     private String permitType;
+
+    public static TextView textmonday;
+    public static TextView texttuesday;
+    public static TextView textwednesday;
+    public static TextView textthursday;
+    public static TextView textfriday;
+    public String tomap;
+    List<String> lots = new ArrayList<String>();
+    List<String> gmaps = new ArrayList<String>();
 
     // Textviews
     private TextView tv; //textView to display the schedule in the format (Day: , className, time, building)
@@ -45,10 +60,104 @@ public class Recommendations extends AppCompatActivity  {
     protected void onStart() {
         super.onStart();
         setRecommendation();
+        setClicks();
 
         // Contains values of parking lot spaces
         bundle = getIntent().getExtras();
     }
+
+    public void setClicks()  {
+        textmonday = (TextView) findViewById(R.id.mondayRecommendedLot);
+        texttuesday = (TextView) findViewById(R.id.tuesdayRecommendedLot);
+        textwednesday = (TextView) findViewById(R.id.wednesdayRecommendedLot);
+        textthursday = (TextView) findViewById(R.id.thursdayRecommendedLot);
+        textfriday = (TextView) findViewById(R.id.fridayRecommendedLot);
+
+        if(lots.size() != 0) {
+            for (int i = 0; i < 5; i++) {
+                if (lots.get(i).equals("Lot 30")) {
+                    tomap = "http://maps.google.com/maps?q=loc:33.970061,-117.333166" + " (Lot 30)";
+                    gmaps.add(tomap);
+                } else if (lots.get(i).equals("Lot 32")) {
+                    tomap = "http://maps.google.com/maps?q=loc:33.969112,-117.330361" + " (Lot 32)";
+                    gmaps.add(tomap);
+                } else if (lots.get(i).equals("Lot 26")) {
+                    tomap = "http://maps.google.com/maps?q=loc:33.981470,-117.334982" + " (Lot 26)";
+                    gmaps.add(tomap);
+                } else if (lots.get(i).equals("Lot 50")) {
+                    tomap = "http://maps.google.com/maps?q=loc:33.9753,-117.320114" + " (Lot 50)";
+                    gmaps.add(tomap);
+                } else if (lots.get(i).equals("Lot 6")) {
+                    tomap = "http://maps.google.com/maps?q=loc:33.974994,-117.336595" + " (Lot 6)";
+                    gmaps.add(tomap);
+                } else if (lots.get(i).equals("Lot 24")) {
+                    tomap = "http://maps.google.com/maps?q=loc:33.978007,-117.330558" + " (Lot 24)";
+                    gmaps.add(tomap);
+                } else {
+                    gmaps.add("none");
+                }
+
+            }
+        }
+
+        textmonday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(gmaps.get(0)));
+                intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+                startActivity(intent);
+
+                Toast.makeText(Recommendations.this, "clicked", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        texttuesday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(gmaps.get(1)));
+                intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+                startActivity(intent);
+
+                Toast.makeText(Recommendations.this, "clicked", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        textwednesday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(gmaps.get(2)));
+                intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+                startActivity(intent);
+
+                Toast.makeText(Recommendations.this, "clicked", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        textthursday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(gmaps.get(3)));
+                intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+                startActivity(intent);
+
+                Toast.makeText(Recommendations.this, "clicked", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        textfriday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(gmaps.get(4)));
+                intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+                startActivity(intent);
+
+                Toast.makeText(Recommendations.this, "clicked", Toast.LENGTH_LONG).show();
+            }
+        });
+
+
+    }
+
 
     public void setRecommendation()  {
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -87,6 +196,7 @@ public class Recommendations extends AppCompatActivity  {
                                                 }
                                                 getRecommendedLot();
                                                 tv2.setText("Recommended Lot: " + recommendedLot);
+                                                lots.add(recommendedLot);
                                             }
                                         } else {
                                             Toast.makeText(Recommendations.this, "Doesn't Exist",

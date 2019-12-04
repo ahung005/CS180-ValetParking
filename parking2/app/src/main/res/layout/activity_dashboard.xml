@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="#FFF"
     tools:context=".Dashboard">
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_marginLeft="92dp"
         android:layout_marginTop="4dp"
         android:text="My Dashboard"
-        android:textColor="@color/cardview_light_background"
+        android:textColor="#000"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Permit Type:"
-        android:textColor="@color/cardview_light_background"
+        android:textColor="#000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleText" />
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
         android:text="Expiration Date:"
-        android:textColor="@color/cardview_light_background"
+        android:textColor="#000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/permitColor" />
@@ -50,7 +50,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="Eligible Permit Type(s) For Lot 24: Red/Blue"
-        android:textColor="@color/cardview_light_background"
+        android:textColor="#000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="(Gold Users Allowed After 6PM Mon-Fri, Red/Blue/Gold Users Allowed Anytime On Weekends/Holidays)"
-        android:textColor="@color/cardview_light_background"
+        android:textColor="#000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/lot24"
         app:layout_constraintTop_toBottomOf="@+id/lot24" />
@@ -74,7 +74,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginTop="16dp"
         android:text="Eligible Permit Type(s) for Lot 6: Red/Blue"
-        android:textColor="@color/cardview_light_background"
+        android:textColor="#000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/additionalLot24" />
@@ -86,7 +86,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:text="(Red/Blue Users Allowed Anytime On Weekends/Holidays)"
-        android:textColor="@color/cardview_light_background"
+        android:textColor="#000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lot6" />
@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Eligible Permit Types(s) for Lot 26: Gold"
-        android:textColor="@color/cardview_light_background"
+        android:textColor="#000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/additionalLot6" />
@@ -107,7 +107,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="(Red/Blue/Gold Users Allowed from 7AM-11PM Mon-Fri, Anytime On Weekends/Holidays)"
-        android:textColor="@color/cardview_light_background"
+        android:textColor="#000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -120,7 +120,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
         android:text="Eligible Permit Type(s) for Lot 30: Gold"
-        android:textColor="@color/cardview_light_background"
+        android:textColor="#000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/additionalLot26" />
@@ -130,7 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Red/Blue/Gold Users Allowed Everyday and Anytime"
-        android:textColor="@color/cardview_light_background"
+        android:textColor="#000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lot30" />
@@ -141,7 +141,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
         android:text="Eligible Permit Type(s) for Lot 32: Gold"
-        android:textColor="@color/cardview_light_background"
+        android:textColor="#000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/additionalLot30" />
@@ -152,7 +152,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Eligible Permit Type(s) for Lot 50: Gold"
-        android:textColor="@color/cardview_light_background"
+        android:textColor="#000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lot32" />
@@ -162,7 +162,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gold Users Allowed from 7AM-6PM Mon-Fri"
-        android:textColor="@color/cardview_light_background"
+        android:textColor="#000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lot50" />

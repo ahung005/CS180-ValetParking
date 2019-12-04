@@ -23,6 +23,8 @@
             android:layout_width="411dp"
             android:layout_height="25dp"
             android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="UCR Lots"
@@ -35,9 +37,10 @@
 
         <Button
             android:id="@+id/button1"
-            android:layout_width="250dp"
+            android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="18dp"
             android:background="@drawable/green_button"
             android:text="Big Springs Structure (Big Springs Road)"
             android:textAllCaps="false"
@@ -63,9 +66,10 @@
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="250dp"
+            android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="18dp"
             android:background="@drawable/blue_button"
             android:text="Lot 6 (North Campus Drive)"
             android:textAllCaps="false"
@@ -90,9 +94,10 @@
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="250dp"
+            android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="18dp"
             android:background="@drawable/green_button"
             android:text="Lot 24 (Canyon Crest Drive)"
             android:textAllCaps="false"
@@ -117,9 +122,10 @@
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="250dp"
+            android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="18dp"
             android:background="@drawable/blue_button"
             android:text="Lot 26 (3375 Rustin Avenue)"
             android:textAllCaps="false"
@@ -144,9 +150,10 @@
 
         <Button
             android:id="@+id/button5"
-            android:layout_width="250dp"
+            android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="18dp"
             android:background="@drawable/green_button"
             android:text="Lot 30 (UCR Lot 30)"
             android:textAllCaps="false"
@@ -171,9 +178,10 @@
 
         <Button
             android:id="@+id/button6"
-            android:layout_width="250dp"
+            android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="18dp"
             android:background="@drawable/blue_button"
             android:text="Lot 32 (UCR Lot 32)"
             android:textAllCaps="false"
@@ -198,9 +206,10 @@
 
         <Button
             android:id="@+id/button7"
-            android:layout_width="250dp"
+            android:layout_width="280dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="18dp"
             android:background="@drawable/green_button"
             android:text="Lot 50 (Everton Place)"
             android:textAllCaps="false"

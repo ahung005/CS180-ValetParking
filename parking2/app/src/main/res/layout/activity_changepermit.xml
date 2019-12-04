@@ -5,7 +5,7 @@
     android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A0E91A">
+    android:background="#FFF">
 
 
     <Spinner
@@ -24,6 +24,7 @@
         android:layout_width="246dp"
         android:layout_height="79dp"
         android:layout_gravity="center"
+        android:layout_marginTop="15dp"
         android:text="Change Permit"
         android:textColor="#000000"
         android:textSize="36sp"
@@ -59,17 +60,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/datePicker" />
 
-    <TextView
-        android:id="@+id/resultTextView"
-        android:layout_width="263dp"
-        android:layout_height="67dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="84dp"
-        android:text="TextView"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.439"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updatePermitButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
