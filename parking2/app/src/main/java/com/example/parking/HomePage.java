@@ -409,6 +409,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 startActivity(new Intent(HomePage.this, Notification.class));
                 break;
             case R.id.nav_logout:
+                ((AppCtx)getApplicationContext()).user_welcomed = false;
                 FirebaseAuth.getInstance().signOut();
                 Toast.makeText(HomePage.this, "Sign out successful",
                         Toast.LENGTH_LONG).show();
@@ -472,6 +473,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         }
     }
 
+    // Currently only handles current day.
     private void getNotifcationHours() {
         if (mAuth.getCurrentUser() != null) {
             final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
