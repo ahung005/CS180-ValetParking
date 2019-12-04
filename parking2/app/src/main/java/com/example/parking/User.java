@@ -5,6 +5,8 @@ public class User {
     public String email;
     public Permit permit;
     public Schedule schedule;
+    public String notifications;
+    public String notificationHours;
 
     public User() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
@@ -15,6 +17,8 @@ public class User {
         this.email = email;
         this.permit = new Permit("None", "");
         this.schedule = new Schedule(getMonday(), getTuesday(), getWednesday(), getThursday(), getFriday());
+        this.notifications = "ON";
+        this.notificationHours = "0";
     }
 
     // Change later to factory

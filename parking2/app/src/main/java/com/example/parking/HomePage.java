@@ -1,5 +1,6 @@
 package com.example.parking;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -16,6 +17,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -26,6 +29,11 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -40,6 +48,8 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     private FirebaseAuth mAuth;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
+    private boolean notificationsOn;
+    private int notificationsHours;
 
     public static TextView textView_big_springs;
     public static TextView textView_lot_6;
@@ -57,7 +67,11 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     String day;
     String time;
     final DateFormat df = new SimpleDateFormat("HH:mm:ss");
+<<<<<<< HEAD
     String userTime = "08:44:00";
+=======
+    String userTime = "";
+>>>>>>> notification and notification page work with database
     //
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -65,9 +79,10 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        mAuth = FirebaseAuth.getInstance();
         this.mHandler = new Handler();
         m_Runnable.run();   // updates system time for notification
-//
+
         // Drawer
         mDrawerLayout = findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
@@ -82,8 +97,6 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Firebase authentication
-        mAuth = FirebaseAuth.getInstance();
-
         textView_big_springs = (TextView) findViewById(R.id.textView_springs);
         textView_lot_6 = (TextView) findViewById(R.id.textView_lot_6);
         textView_lot_24 = (TextView) findViewById(R.id.textView_lot_24);
@@ -114,11 +127,18 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
 
         createNotificationChannel();
 
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        PendingIntent startApp = PendingIntent.getActivity(this, 0,
+                intent, 0);
+
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID);
         builder.setSmallIcon(R.drawable.ic_local_parking_black_24dp);
         builder.setContentTitle(reminder);
         builder.setStyle(new NotificationCompat.BigTextStyle().bigText(lots));
         builder.setPriority(NotificationCompat.PRIORITY_HIGH);
+        builder.setContentIntent(startApp);
 
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
         notificationManagerCompat.notify(NOTIFICATION_ID, builder.build());
@@ -309,9 +329,13 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     // updates notification time and parking spaces
     private final Runnable m_Runnable = new Runnable() {
         public void run() {
-            time = df.format(Calendar.getInstance().getTime());         //
-            if(time.equals(userTime)) {                                  //
-                sendOnChannel1();                                       //
+            time = df.format(Calendar.getInstance().getTime());
+            getNotificationSwitchVal();
+            getNotifcationHours();
+            if(!userTime.isEmpty() && time.equals(userTime)) {
+                if (notificationsOn) {
+                    sendOnChannel1();
+                }
             }
 
 
@@ -331,6 +355,11 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
         }
         //handle the already login user
+        // Only welcome user the first time app is started
+        if (!((AppCtx) getApplicationContext()).user_welcomed) {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            WelcomeUser(user.getUid());
+        }
     }
 
     @Override
@@ -395,5 +424,114 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         return true;
     }
 
-    //ma
+    private void WelcomeUser(String uid) {
+        FirebaseDatabase.getInstance()                // Get everything
+                .getReference("Users")           // From that get Users
+                .child(uid)                           // From that get specific uid (class)
+                .child("name")                        // From that get that class field "name"
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            Toast.makeText(getApplicationContext(), "Logged in as " + dataSnapshot.getValue(),
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Toast.makeText(getApplicationContext(), databaseError.toString(),
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
+
+        // Don't welcome user again
+        ((AppCtx)getApplicationContext()).user_welcomed = true;
+    }
+
+    private void getNotificationSwitchVal() {
+        if (mAuth.getCurrentUser() != null) {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            FirebaseDatabase.getInstance()
+                    .getReference("Users")
+                    .child(user.getUid())
+                    .child("notifications")
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.exists()) {
+                                notificationsOn = ((String) dataSnapshot.getValue()).matches("ON");
+                            } else {
+                                Toast.makeText(HomePage.this, "Shit don't exist",
+                                        Toast.LENGTH_LONG).show();
+                            }
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            Toast.makeText(HomePage.this, databaseError.toString(),
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    });
+        }
+    }
+
+    private void getNotifcationHours() {
+        if (mAuth.getCurrentUser() != null) {
+            final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            FirebaseDatabase.getInstance()
+                    .getReference("Users")
+                    .child(user.getUid())
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.exists()) {
+                                String hoursBefore = dataSnapshot.child("notificationHours").getValue(String.class);
+                                if (hoursBefore != null) {
+                                    notificationsHours = Integer.parseInt(hoursBefore);
+                                }
+
+                                // Get today's day of the week
+                                SimpleDateFormat formatter = new SimpleDateFormat("EEEE");
+                                String day = formatter.format(Calendar.getInstance().getTime());
+
+                                // Get time of today's alarm
+                                String databaseTime = dataSnapshot.child("schedule").child("wednesday").child("time").getValue(String.class);
+                                updateUserTime(Integer.parseInt(hoursBefore), databaseTime);
+
+                                //DataSnapshot schedule = dataSnapshot.child("Schedule");
+                                //for (DataSnapshot snapshot : dataSnapshot.getChildren()) {}
+
+                            } else {
+                                Toast.makeText(HomePage.this, "Shit don't exist",
+                                        Toast.LENGTH_LONG).show();
+                            }
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            Toast.makeText(HomePage.this, databaseError.toString(),
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    });
+        }
+    }
+
+    public void updateUserTime(int hoursBefore, String databaseTime) {
+        if (mAuth.getCurrentUser() != null) {
+            if (databaseTime != null && !databaseTime.isEmpty()) {
+                String[] times = databaseTime.split(":");
+                boolean pm = times[1].substring(2).trim().matches("PM");
+                int hours = Integer.parseInt(times[0].trim()) + (pm ? 12 : 0) - hoursBefore;
+                int mins = Integer.parseInt(times[1].substring(0, 2));
+                String minutes = String.valueOf(mins);
+                if (mins < 10) {
+                    minutes = "0" + mins;
+                }
+                userTime = hours + ":" + minutes + ":" + "00";
+            }
+        }
+    }
 }

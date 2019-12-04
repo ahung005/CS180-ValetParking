@@ -48,6 +48,7 @@
         android:layout_marginTop="68dp"
         android:text="Hour(s) before notification"
         android:textSize="18sp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/notiText1" />
@@ -58,6 +59,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
+        android:maxLength="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/notiText2" />

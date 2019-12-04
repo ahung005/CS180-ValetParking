@@ -131,6 +131,7 @@ public final class R {
         public static final int notification_background = 0x7f0900d7;
         public static final int notification_main_column = 0x7f0900d8;
         public static final int notification_main_column_container = 0x7f0900d9;
+<<<<<<< HEAD
         public static final int right_icon = 0x7f0900f3;
         public static final int right_side = 0x7f0900f4;
         public static final int tag_accessibility_actions = 0x7f090121;
@@ -145,6 +146,22 @@ public final class R {
         public static final int text2 = 0x7f09012b;
         public static final int time = 0x7f090143;
         public static final int title = 0x7f090144;
+=======
+        public static final int right_icon = 0x7f0900f4;
+        public static final int right_side = 0x7f0900f5;
+        public static final int tag_accessibility_actions = 0x7f090122;
+        public static final int tag_accessibility_clickable_spans = 0x7f090123;
+        public static final int tag_accessibility_heading = 0x7f090124;
+        public static final int tag_accessibility_pane_title = 0x7f090125;
+        public static final int tag_screen_reader_focusable = 0x7f090126;
+        public static final int tag_transition_group = 0x7f090127;
+        public static final int tag_unhandled_key_event_manager = 0x7f090128;
+        public static final int tag_unhandled_key_listeners = 0x7f090129;
+        public static final int text = 0x7f09012b;
+        public static final int text2 = 0x7f09012c;
+        public static final int time = 0x7f090144;
+        public static final int title = 0x7f090145;
+>>>>>>> notification and notification page work with database
     }
     public static final class integer {
         private integer() {}

@@ -69,8 +69,13 @@ public final class R {
         public static final int icon_only = 0x7f0900a0;
         public static final int light = 0x7f0900aa;
         public static final int none = 0x7f0900d1;
+<<<<<<< HEAD
         public static final int standard = 0x7f09011a;
         public static final int wide = 0x7f090163;
+=======
+        public static final int standard = 0x7f09011b;
+        public static final int wide = 0x7f090164;
+>>>>>>> notification and notification page work with database
     }
     public static final class string {
         private string() {}

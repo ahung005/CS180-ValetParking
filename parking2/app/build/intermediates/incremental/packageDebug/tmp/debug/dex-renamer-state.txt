@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 #Wed Dec 04 08:42:25 PST 2019
 base.0=/Users/anthonyyip/Desktop/real/CS180-ValetParking/parking2/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
+=======
+#Wed Dec 04 09:14:17 PST 2019
+base.0=C\:\\Users\\Dan\\AndroidStudioProjects\\CS180-ValetParking\\parking2\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+>>>>>>> notification and notification page work with database
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
+<<<<<<< HEAD
 base.1=/Users/anthonyyip/Desktop/real/CS180-ValetParking/parking2/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex
+=======
+base.1=C\:\\Users\\Dan\\AndroidStudioProjects\\CS180-ValetParking\\parking2\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+>>>>>>> notification and notification page work with database

@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "/Users/anthonyyip/Desktop/real/CS180-ValetParking/parking2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v22/values-v22.xml",
             "map": [
                 {
                     "source": "/Users/anthonyyip/.gradle/caches/transforms-2/files-2.1/8b7b145040f80622d5d2271a1f9fca83/appcompat-1.1.0/res/values-v22/values-v22.xml",
+=======
+            "outputFile": "C:\\Users\\Dan\\AndroidStudioProjects\\CS180-ValetParking\\parking2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Dan\\.gradle\\caches\\transforms-2\\files-2.1\\8b7b145040f80622d5d2271a1f9fca83\\appcompat-1.1.0\\res\\values-v22\\values-v22.xml",
+>>>>>>> notification and notification page work with database
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

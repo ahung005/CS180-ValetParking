@@ -14,11 +14,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -48,11 +43,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onStart();
         //handle the already login user
         if (mAuth.getCurrentUser() != null) {
-            // Only welcome user the first time app is started
-            if (!((AppCtx)getApplicationContext()).user_welcomed) {
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                WelcomeUser(user.getUid());
-            }
             startActivity(new Intent(getApplicationContext(), HomePage.class));
             finish();   // Destroy activity MainActivity and not exist in Back stack
         }
@@ -83,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             if (task.isSuccessful()) {
                                 startActivity(new Intent(getApplicationContext(), HomePage.class));
                             } else {
-                                Toast.makeText(MainActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
                             }
 
                         }
@@ -116,31 +106,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return valid;
     }
 
-    private void WelcomeUser(String uid) {
-        FirebaseDatabase.getInstance()                // Get everything
-                .getReference("Users")           // From that get Users
-                .child(uid)                           // From that get specific uid (class)
-                .child("name")                        // From that get that class field "name"
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            // If we have name in the specific database location, get the value (from snapshot)
-                            Toast.makeText(MainActivity.this, "Logged in as " + dataSnapshot.getValue(),
-                                    Toast.LENGTH_LONG).show();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Toast.makeText(MainActivity.this, databaseError.toString(),
-                                Toast.LENGTH_LONG).show();
-                    }
-                });
-
-        // Don't welcome user again
-        ((AppCtx)getApplicationContext()).user_welcomed = true;
-    }
 
     // Could add login with google, twitter, etc. Then send email so they can recover LATER
 }
