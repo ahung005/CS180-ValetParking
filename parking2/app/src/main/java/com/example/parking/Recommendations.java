@@ -124,27 +124,129 @@ public class Recommendations extends AppCompatActivity  {
 
     private void getRecommendedLot() {
         if (permitType.equals("Gold")) {
+            String F30 = "";
+            String F32 = "";
+            String F50 = "";
+            String F26 = "";
+            if (getIntent().getStringExtra("lot_30").matches("FULL")){
+                F30 = "30, ";
+            }
+            if (getIntent().getStringExtra("lot_32").matches("FULL")){
+                F32 = "32, ";
+            }
+            if (getIntent().getStringExtra("lot_50").matches("FULL")){
+                F50 = "50, ";
+            }
+            if (getIntent().getStringExtra("lot_26").matches("FULL")){
+                F26 = "26, ";
+            }
+            if (F26.matches("26, ") || F50.matches("50, ") || F32.matches("32, ") || F30.matches("30, ")){
+                String Lots = F26 + F30 + F32 + F50;
+                TextView fullWarn = findViewById(R.id.fullWarn);
+                fullWarn.setText("Lot " + Lots.substring(0,Lots.length() - 2) + " is Full");
+                //Toast.makeText(Recommendations.this,"Lot " + Lots.substring(0,Lots.length() - 2) + " is Full",
+                //        Toast.LENGTH_LONG).show();
+            }
             if ( building.equals("Olmsted")
                     || building.equals("Boyce") || building.equals("Life Sciences")
                     || building.equals("Pierce") || building.equals("Spieth")) {
-                recommendedLot = "Lot 32";
+                if(getIntent().getStringExtra("lot_32").matches("FULL")){
+                    if (getIntent().getStringExtra("lot_30").matches("FULL")){
+                        if (getIntent().getStringExtra("lot_50").matches("FULL")){
+                            if (getIntent().getStringExtra("lot_26").matches("FULL")){
+                                recommendedLot = "None";
+                            }else{
+                                recommendedLot = "Lot 26";
+                            }
+                        }else{
+                            recommendedLot = "Lot 50";
+                        }
+                    }else{
+                        recommendedLot = "Lot 30";
+                    }
+                }else{
+                    recommendedLot = "Lot 32";
+                }
             } else if ( building.equals("Watkins") || building.equals("Sproul") || building.equals("Hum/SS")) {
-                recommendedLot = "Lot 30";
+                if (getIntent().getStringExtra("lot_30").matches("FULL")){
+                    if (getIntent().getStringExtra("lot_32").matches("FULL")){
+                        if (getIntent().getStringExtra("lot_50").matches("FULL")){
+                            if (getIntent().getStringExtra("lot_26").matches("FULL")){
+                                recommendedLot = "None";
+                            }else{
+                                recommendedLot = "Lot26";
+                            }
+                        }else{
+                            recommendedLot = "Lot 50";
+                        }
+                    }else{
+                        recommendedLot = "Lot 32";
+                    }
+                }else{
+                    recommendedLot = "Lot 30";
+                }
             } else if (building.equals("UV Theatre") || building.equals("Skye") || building.equals("MSE")
                     || building.equals("UNLH") || building.equals("CHASS North")
                     || building.equals("Bourns") || building.equals("Chung")
                     || building.equals("CHASS South") || building.equals("Physics")) {
-                recommendedLot = "Lot 50";
+                if (getIntent().getStringExtra("lot_50").matches("FULL")){
+                    if (getIntent().getStringExtra("lot_30").matches("FULL")){
+                        if (getIntent().getStringExtra("lot_32").matches("FULL")){
+                            if (getIntent().getStringExtra("lot_26").matches("FULL")){
+                                recommendedLot = "None";
+                            }else {
+                                recommendedLot = "Lot 26";
+                            }
+                        }else {
+                            recommendedLot = "Lot 32";
+                        }
+                    }else {
+                        recommendedLot = "Lot 30";
+                    }
+                }else{
+                    recommendedLot = "Lot 50";
+                }
             }
         } else {
+            String F6 = "";
+            String F24 = "";
+            if (getIntent().getStringExtra("lot_6").matches("FULL")){
+                F6 = "6, ";
+            }
+            if (getIntent().getStringExtra("lot_24").matches("FULL")){
+                F24 = "24, ";
+            }
+            if(F6.matches("6, ") || F24.matches("24, ")){
+                String Lots = F6 + F24;
+                TextView fullWarn = findViewById(R.id.fullWarn);
+                fullWarn.setText("Lot " + Lots.substring(0,Lots.length() - 2) + " is Full");
+                //Toast.makeText(Recommendations.this,"Lot " + Lots.substring(0,Lots.length() - 2) + " is Full",
+                //        Toast.LENGTH_LONG).show();
+            }
             if ( building.equals("Spieth") || building.equals("Olmsted") || building.equals("Life Sciences")
                     || building.equals("Sproul") || building.equals("Hum/SS") || building.equals("Watkins")) {
-                recommendedLot = "Lot 6";
+                if (getIntent().getStringExtra("lot_6").matches("FULL")){
+                    if (getIntent().getStringExtra("lot_24").matches("FULL")){
+                        recommendedLot = "None";
+                    }else{
+                        recommendedLot = "Lot 24";
+                    }
+                }else {
+                    recommendedLot = "Lot 6";
+                }
             } else if (building.equals("UV Theatre") || building.equals("Boyce") || building.equals("Skye") || building.equals("MSE")
                     || building.equals("UNLH") || building.equals("CHASS North")
                     || building.equals("Bourns") || building.equals("Chung")
                     || building.equals("CHASS South") || building.equals("Physics")  || building.equals("Pierce") ) {
-                recommendedLot = "Lot 24";
+                if (getIntent().getStringExtra("lot_24").matches("FULL")){
+                    if (getIntent().getStringExtra("lot_6").matches("FULL")){
+                        recommendedLot = "None";
+                    }else{
+                        recommendedLot = "Lot 6";
+                    }
+                }else {
+                    recommendedLot = "Lot 24";
+                }
             }
         }
     }
