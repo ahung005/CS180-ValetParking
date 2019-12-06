@@ -27,6 +27,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -48,6 +52,8 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     private FirebaseAuth mAuth;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
+    private GoogleSignInAccount account;
+    private GoogleSignInClient signInClient;
     private boolean notificationsOn;
     private int notificationsHours;
 
@@ -76,6 +82,11 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         mAuth = FirebaseAuth.getInstance();
+        account = GoogleSignIn.getLastSignedInAccount(HomePage.this);
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        signInClient = GoogleSignIn.getClient(HomePage.this, gso);
         this.mHandler = new Handler();
         m_Runnable.run();   // updates system time for notification
 
@@ -347,14 +358,23 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         super.onStart();
         // In case user makes it here without authorized account
         if (mAuth.getCurrentUser() == null) {
-            FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
         }
         //handle the already login user
         // Only welcome user the first time app is started
-        if (!((AppCtx) getApplicationContext()).user_welcomed) {
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            WelcomeUser(user.getUid());
+        String welcome_msg = "";
+        if (mAuth.getCurrentUser() != null) {
+            if (!((AppCtx) getApplicationContext()).user_welcomed) {
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                WelcomeUser(user.getUid());
+            }
+        } else if (account != null) {
+            if (!((AppCtx) getApplicationContext()).user_welcomed) {
+                Toast.makeText(getApplicationContext(), "Logged in as " + account.getDisplayName(),
+                        Toast.LENGTH_LONG).show();
+                ((AppCtx)getApplicationContext()).user_welcomed = true;
+            }
         }
     }
 
@@ -410,7 +430,11 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 break;
             case R.id.nav_logout:
                 ((AppCtx)getApplicationContext()).user_welcomed = false;
-                FirebaseAuth.getInstance().signOut();
+                if (mAuth.getCurrentUser() != null) {
+                    FirebaseAuth.getInstance().signOut();
+                    if (signInClient != null)
+                        signInClient.signOut();
+                    }
                 Toast.makeText(HomePage.this, "Sign out successful",
                         Toast.LENGTH_LONG).show();
                 startActivity(new Intent(HomePage.this, MainActivity.class));
@@ -490,14 +514,11 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
 
                                     // Get today's day of the week
                                     SimpleDateFormat formatter = new SimpleDateFormat("EEEE");
-                                    String day = formatter.format(Calendar.getInstance().getTime());
+                                    String day = formatter.format(Calendar.getInstance().getTime()).toLowerCase();
 
                                    // Get time of today's alarm
                                    String databaseTime = dataSnapshot.child("schedule").child(day).child("time").getValue(String.class);
-                                    updateUserTime(Integer.parseInt(hoursBefore), databaseTime);
-
-                                    //DataSnapshot schedule = dataSnapshot.child("Schedule");
-                                    //for (DataSnapshot snapshot : dataSnapshot.getChildren()) {}
+                                   updateUserTime(Integer.parseInt(hoursBefore), databaseTime);
                                 }
                             } else {
                                 Log.e("Homepage", "getNoficationHours: Error: User doesn't exist" );
@@ -526,6 +547,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                     minutes = "0" + mins;
                 }
                 userTime = hours + ":" + minutes + ":" + "00";
+
             }
         }
     }

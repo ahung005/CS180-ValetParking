@@ -9,22 +9,22 @@ import com.google.firebase.database.PropertyName;
 // or for holidays
 public class Schedule
 {
-    public Monday Monday;
-    public Tuesday Tuesday;
-    public Wednesday Wednesday;
-    public Thursday Thursday;
-    public Friday Friday;
+    public Monday monday;
+    public Tuesday tuesday;
+    public Wednesday wednesday;
+    public Thursday thursday;
+    public Friday friday;
 
     public Schedule() {
 
     }
 
     public Schedule(Monday mon, Tuesday tue, Wednesday wed, Thursday thur, Friday fri) {
-        this.Monday = mon;
-        this.Tuesday = tue;
-        this.Wednesday = wed;
-        this.Thursday = thur;
-        this.Friday = fri;
+        this.monday = mon;
+        this.tuesday = tue;
+        this.wednesday = wed;
+        this.thursday = thur;
+        this.friday = fri;
     }
 
     public static class Monday extends Weekday

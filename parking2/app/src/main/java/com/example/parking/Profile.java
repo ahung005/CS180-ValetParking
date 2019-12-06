@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -30,11 +33,17 @@ public class Profile extends AppCompatActivity {
     private TextView permit_type;
 
     private FirebaseUser user;
+    private GoogleSignInAccount account;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
+
+        account = GoogleSignIn.getLastSignedInAccount(Profile.this);
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
 
         user_name = findViewById(R.id.userName);
         user_email = findViewById(R.id.userEmail);
@@ -46,12 +55,22 @@ public class Profile extends AppCompatActivity {
         DisplayPermit();
 
         Button changePassButton = (Button) findViewById(R.id.changePassButton);
-        changePassButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), changePassword.class));
-            }
-        });
+
+        // Only allow change of password if you're not logged in with gmail (CHANGE GMAIL PASS? lol)
+        if (account != null) {
+            Log.e("Profile", "onCreate: null" );
+            changePassButton.setEnabled(false);
+            changePassButton.setAlpha(0.2f);
+        } else {
+            Log.e("Profile", "onCreate: not null" );
+
+            changePassButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getApplicationContext(), changePassword.class));
+                }
+            });
+        }
 
         Button changePermitButton = (Button) findViewById(R.id.changePermitButton);
         changePermitButton.setOnClickListener(new View.OnClickListener() {
