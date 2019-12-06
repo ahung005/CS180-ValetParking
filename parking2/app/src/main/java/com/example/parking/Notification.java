@@ -43,6 +43,11 @@ public class Notification extends AppCompatActivity {
         final Button notiUpdate = (Button) findViewById(R.id.notiUpdateButton);
 
 
+        notiText2.setVisibility(View.GONE);
+        notiEditText.setVisibility(View.GONE);
+        notiUpdate.setVisibility(View.GONE);
+
+        setSwitch();
         switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
